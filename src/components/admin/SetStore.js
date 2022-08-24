@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ItemDetailForm from './store-set-up/ItemDetailForm'
 
 const SetStore = () => {
   const [store, setStore] = useState()
@@ -23,6 +24,8 @@ console.log(admin)
   return (
     <div>
       {!admin ? console.log('loading') : <h5>Welcome {admin.firstName}</h5> }
+      <p>Here are the steps to set up your store-front</p>
+      {!admin ? console.log('loading') : <ItemDetailForm username={ username } token={token} id={admin._id}/>}
     </div>
   )
 }

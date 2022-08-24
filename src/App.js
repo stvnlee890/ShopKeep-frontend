@@ -4,6 +4,7 @@ import StoreFronts from './components/StoreFronts/StoreFronts';
 import Signup from './components/signup-login/Signup';
 import Login from './components/signup-login/Login'
 import SetStore from './components/admin/SetStore';
+import UploadImages from './components/admin/store-set-up/UploadImages';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/:username/setstore' element={<SetStore />} />
+        <Route path='/upload-images/:storeid' element={<UploadImages />} />
       </Routes>
     </div>
   );

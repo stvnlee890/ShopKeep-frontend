@@ -18,8 +18,6 @@ const Login = () => {
   const handleChange = (event) => {
     event.preventDefault()
     setUserLogin({ ...userLogin, [event.target.id]: event.target.value })
-    console.log(event.target.id)
-    console.log(event.target.value)
   }
 
   const handleSubmit = (event) => {
@@ -30,7 +28,6 @@ const Login = () => {
         if(data.user.isAdmin === true){
           console.log(data)
           window.localStorage.setItem('token', data.token)
-        
           navigate(`/${data.user.username}/setstore`)
         }else {
           navigate('/')
