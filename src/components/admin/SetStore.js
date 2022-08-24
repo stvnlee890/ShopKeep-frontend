@@ -1,21 +1,24 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-
+import { useParams } from 'react-router-dom'
 
 const SetStore = () => {
   const [store, setStore] = useState()
+  const [admin, setAdmin] = useState()
+  const { username } = useParams()
 
   const token = window.localStorage.getItem('token')
   useEffect(() => {
-    axios.get('http://localhost:8080/store-front/admin/6305178d38feddf14cbd1911', {
+    axios.get(`http://localhost:8080/user/${username}`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       }
     })
-      .then((res) => setStore(res.data))
+      .then((res) => setAdmin(res.data))
   }, [])
-  console.log(store)
+console.log(admin)
+
  
   return (
     <div>
