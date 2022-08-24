@@ -19,10 +19,10 @@ const SetStore = () => {
   }, [])
 console.log(admin)
 
- 
+
   return (
     <div>
-      <h5>Welcome to setting store</h5>
+      {!admin ? console.log('loading') : <h5>Welcome {admin.firstName}</h5> }
     </div>
   )
 }
