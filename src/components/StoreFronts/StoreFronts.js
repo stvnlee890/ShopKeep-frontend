@@ -2,7 +2,7 @@
 const StoreFronts = () => {
   return (
     <div>
-      <h1>User Store Front</h1>
+      <h1>Seller Store Fronts</h1>
     </div>
   )
 }

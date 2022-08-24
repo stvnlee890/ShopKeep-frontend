@@ -23,7 +23,7 @@ const UploadImages = () => {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/images`)
+    axios.get(`http://localhost:8080/images/${storeid}`, )
       .then((res) => setImageUrl(res.data))
   },[uploadImages])
   console.log(imageUrl)
@@ -47,7 +47,7 @@ const UploadImages = () => {
       alert('please upload an image')
     } else {
       event.preventDefault()
-      axios.post('http://localhost:8080/images', formData, {
+      axios.post(`http://localhost:8080/images`, formData, {
         headers: {'Content-Type': 'multipart/form-data'}
       })
       .then((res) => {
