@@ -8,3 +8,8 @@ const StoreFronts = () => {
 }
 
 export default StoreFronts
+
+
+// GET REQUEST FOR STORE-FRONTS OF ALL USERS
+// WHEN CLICK DIRECT THEM TO SPECIFIC USER STORE FRONT
+// 

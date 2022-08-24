@@ -28,13 +28,13 @@ const Login = () => {
       .then((res) => {
         const data = res.data
         if(data.user.isAdmin === true){
-          console.log(data.user)
+          console.log(data)
+          window.localStorage.setItem('token', data.token)
           navigate(`/${data.user.username}/setstore`)
         }else {
           navigate('/')
         }
       })
-     
       console.log(token)
   }
 
