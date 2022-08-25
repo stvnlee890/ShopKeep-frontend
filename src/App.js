@@ -22,9 +22,10 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signout' element={<Signout />} />
+
         <Route path='/:username/adminpage' element={<AdminPage />}>
           <Route path='setstore' element={<SetStore />} />
-          <Route path='storefronts' element={<AdminStoreFronts /> } />
+          <Route path='view-admin-store/:id' element={<AdminStoreFronts /> } />
         </Route>
           <Route path='/upload-images/:storeid' element={<UploadImages />} />
      

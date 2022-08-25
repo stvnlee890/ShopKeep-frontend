@@ -6,6 +6,7 @@ import UploadImages from './UploadImages'
 const ItemDetailForm = ({ username, token, id }) => {
   const navigate = useNavigate()
   const formData = {
+    storeName: '',
     price: '',
     condition: '',
     color: '',
@@ -52,6 +53,7 @@ const ItemDetailForm = ({ username, token, id }) => {
   
       {/* STORE FRONT FORM */}
       <form onSubmit={handleSubmit}>
+        <input onChange={handleChange} placeholder="store front name" type='text' id='storeName' value={storeFront.storeName} />
         <input onChange={handleChange} placeholder="price" type='text' id='price' value={storeFront.price} />
         <input onChange={handleChange} placeholder="condition" type='text' id='condition' value={storeFront.condition}/>
         <input onChange={handleChange} placeholder="color" type='text' id='color' value={storeFront.color}/>
