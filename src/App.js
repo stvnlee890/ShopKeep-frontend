@@ -7,25 +7,23 @@ import SetStore from './components/admin/SetStore';
 import UploadImages from './components/admin/store-set-up/UploadImages';
 import Home from './components/home/home'
 import AdminPage from './components/admin/store-set-up/AdminPage';
+import Navbar from './components/navbar/NavBar';
 
 function App() {
   return (
     <div>
-      <nav>
-        <h1>Shop Keep</h1>
-        <Link to='/signup'>Sign Up</Link>
-        <Link to='/login'>Login</Link>
-      </nav>
-  
+      <Navbar />
+
       <Routes>
         <Route path='/' element={<Home />} />
         {/* <Route path='/' element={<StoreFronts />} /> */}
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
-        {/* Secured Routes */}
-        <Route path='/:username/adminpage' element={<AdminPage />} />
-        <Route path='/:username/setstore' element={<SetStore />} />
-        <Route path='/upload-images/:storeid' element={<UploadImages />} />
+    
+        <Route path='/:username/adminpage' element={<AdminPage />}>
+          <Route path='/setstore' element={<SetStore />} />
+          <Route path='/upload-images/:storeid' element={<UploadImages />} />
+        </Route>
       </Routes>
     </div>
   );
