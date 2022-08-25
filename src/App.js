@@ -6,6 +6,7 @@ import Login from './components/signup-login/Login'
 import SetStore from './components/admin/SetStore';
 import UploadImages from './components/admin/store-set-up/UploadImages';
 import Home from './components/home/home'
+import AdminPage from './components/admin/store-set-up/AdminPage';
 
 function App() {
   return (
@@ -15,11 +16,14 @@ function App() {
         <Link to='/signup'>Sign Up</Link>
         <Link to='/login'>Login</Link>
       </nav>
+  
       <Routes>
         <Route path='/' element={<Home />} />
         {/* <Route path='/' element={<StoreFronts />} /> */}
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
+        {/* Secured Routes */}
+        <Route path='/:username/adminpage' element={<AdminPage />} />
         <Route path='/:username/setstore' element={<SetStore />} />
         <Route path='/upload-images/:storeid' element={<UploadImages />} />
       </Routes>

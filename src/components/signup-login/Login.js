@@ -28,7 +28,7 @@ const Login = () => {
         if(data.user.isAdmin === true){
           console.log(data)
           window.localStorage.setItem('token', data.token)
-          navigate(`/${data.user.username}/setstore`)
+          navigate(`/${data.user.username}/adminpage`)
         }else {
           navigate('/')
         }

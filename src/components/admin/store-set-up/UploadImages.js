@@ -23,24 +23,11 @@ const UploadImages = () => {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/images/${storeid}`, )
+    axios.get(`http://localhost:8080/images/${storeid}` )
       .then((res) => setImageUrl(res.data))
   },[uploadImages])
   console.log(imageUrl)
-  // const populate = async() => {
-  //   const getImages = await axios.get(`http://localhost:8080/images`)
-  //   const setImages = setImageUrl(getImages.data)
-  //   console.log(imageUrl)
-  //   const url = getImages.data._id
-  //   console.log(url)
-  //   const populateStoreFront = await axios.put(`http://localhost:8080/store-front/admin/${storeid}`, {'imageUrl': url})
-  //   const res = populateStoreFront.data
-  //   console.log(res)
-  //   return res
-  // }
-  // useEffect(() => {
-  //   populate()
-  // },[uploadImages])
+
 
   const handleSubmit = (event) => {
     if(!uploadImages){
