@@ -21,7 +21,7 @@ const AdminStoreFronts = () => {
       .then((res) => setStoreFront(res.data))
   }, [])
 
-console.log(storeFront)
+
   if(!storeFront){
     return(
       <p>loading</p>
@@ -32,7 +32,13 @@ console.log(storeFront)
   <div>
     <h1>Admin Store Fronts</h1>
     {storeFront.map((stores) => (
-      <ViewAdminStore key={stores.id} owner={stores.owner} sellername= {username} storeName={stores.storeName} id={stores.id}/>
+      <ViewAdminStore 
+      key={stores._id} 
+      owner={stores.owner} 
+      sellername= {username} 
+      storeName={stores.storeName} 
+      price={stores.price}
+      id={stores._id}/>
     ))}
   </div>
 
