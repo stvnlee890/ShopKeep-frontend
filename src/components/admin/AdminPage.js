@@ -3,7 +3,13 @@ import { Link, Outlet } from 'react-router-dom'
 const AdminPage = () => {
   return (
     <>
-    <h1>Admin</h1>
+      <div>
+        <h1>AdminPage</h1>
+      </div>
+      <nav>
+        <Link to='setstore'>Set New Shop</Link>
+      </nav>
+      <Outlet />
     </>
   )
 }

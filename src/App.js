@@ -1,6 +1,6 @@
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom'
-import StoreFronts from './components/StoreFronts/StoreFronts';
+import { Routes, Route } from 'react-router-dom'
+
 import Signup from './components/signup-login/Signup';
 import Login from './components/signup-login/Login'
 import SetStore from './components/admin/SetStore';
@@ -19,11 +19,12 @@ function App() {
         {/* <Route path='/' element={<StoreFronts />} /> */}
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
-    
-        <Route path='/:username/adminpage' element={<AdminPage />} />
-        <Route path='/setstore' element={<SetStore />} />
-        <Route path='/upload-images/:storeid' element={<UploadImages />} />
-  
+
+        <Route path='/:username/adminpage' element={<AdminPage />}>
+          <Route path='setstore' element={<SetStore />} />
+          <Route path='upload-images/:storeid' element={<UploadImages />} />
+        </Route>
+     
       </Routes>
     </div>
   );
