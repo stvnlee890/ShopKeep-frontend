@@ -1,12 +1,14 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Image from './Image'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 const UploadImages = () => {
   const { storeid } = useParams()
   const [uploadImages, setUploadImages] = useState('')
   const [imageUrl, setImageUrl] = useState('')
+  const navigate = useNavigate()
+  const username = window.localStorage.getItem('user')
 
   const formData = new FormData()
     formData.append('image', uploadImages)
@@ -18,6 +20,9 @@ const UploadImages = () => {
   }
   console.log(uploadImages)
 
+  const handleClick = () => {
+    navigate(`/${username}/adminpage`)
+  }
   // NEED TO SEND HEADERS OF STORE-FRONT ID TO POPULATE DATA
   // HEADERS: { storeFront: useParams() }
 
@@ -63,6 +68,7 @@ const UploadImages = () => {
         <Image key={images._id} imageUrl={images} />
       )) }
       </div>
+      <button type='submit' onClick={handleClick} >Finished</button>
     </div>
   )
 }
