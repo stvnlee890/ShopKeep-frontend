@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate, Link, Outlet} from 'react-router-dom'
 import UploadImages from './UploadImages'
 
 const ItemDetailForm = ({ username, token, id }) => {
@@ -31,8 +31,8 @@ const ItemDetailForm = ({ username, token, id }) => {
     event.preventDefault()
     axios.post('http://localhost:8080/store-front/admin', storeFront, {headers})
           .then((res) => {
-            setNewStore(res.data)
-            navigate(`/upload-images/${res.data._id}`)  
+            setNewStore(res.data) 
+            navigate(`/upload-images/${res.data._id}`)
           })
   }
 
@@ -57,9 +57,10 @@ const ItemDetailForm = ({ username, token, id }) => {
         <input onChange={handleChange} placeholder="color" type='text' id='color' value={storeFront.color}/>
         <input onChange={handleChange} placeholder="description" type='text' id='description' value={storeFront.description}/>
         <input onChange={handleChange} placeholder="category" type='text' id='category' value={storeFront.category}/>
-        <button type="submit">Submit</button>
+        <button type="submit">Upload</button>
         {/* <button type='submit'><Link to={`/${username}/setstore/upload-images`}>Upload</Link></button> */}
       </form>
+      <Outlet />
     </div>
   )
 }

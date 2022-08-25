@@ -8,6 +8,7 @@ const AdminPage = () => {
       </div>
       <nav>
         <Link to='setstore'>Set New Shop</Link>
+        <Link to='storefronts'>See Store Front</Link>
       </nav>
       <Outlet />
     </>

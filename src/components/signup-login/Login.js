@@ -15,10 +15,13 @@ const Login = () => {
   const [userLogin, setUserLogin] = useState(initialFormState)
   const [token, setToken] = useState()
 
+
+
   const handleChange = (event) => {
     event.preventDefault()
     setUserLogin({ ...userLogin, [event.target.id]: event.target.value })
   }
+  // set to local storage, isLoggedIn = true, username, token
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -28,6 +31,8 @@ const Login = () => {
         if(data.user.isAdmin === true){
           console.log(data)
           window.localStorage.setItem('token', data.token)
+          window.localStorage.setItem('user', data.user.username)
+          window.localStorage.setItem('isLoggedIn', true)
           navigate(`/${data.user.username}/adminpage`)
         }else {
           navigate('/')
