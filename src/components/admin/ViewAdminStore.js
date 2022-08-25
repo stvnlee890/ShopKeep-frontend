@@ -1,6 +1,8 @@
+import { useParams } from 'react-router-dom'
 
-const ViewAdminStore = ({ owner, sellerid, storeName }) => {
-  if(owner = sellerid){
+const ViewAdminStore = ({ owner, sellername, storeName, id }) => {
+  const { username } = useParams()
+  if(sellername === username) {
     console.log(owner)
   }
   return (

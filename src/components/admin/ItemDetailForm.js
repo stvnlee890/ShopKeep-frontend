@@ -4,6 +4,7 @@ import { useParams, useNavigate, Link, Outlet} from 'react-router-dom'
 import UploadImages from './UploadImages'
 
 const ItemDetailForm = ({ username, token, id }) => {
+  console.log(username)
   const navigate = useNavigate()
   const formData = {
     storeName: '',
@@ -12,6 +13,7 @@ const ItemDetailForm = ({ username, token, id }) => {
     color: '',
     description: '',
     category: '',
+    username: username,
     owner: id,
   }
   const [storeFront, setStoreFront] = useState(formData)

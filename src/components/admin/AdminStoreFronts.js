@@ -5,7 +5,8 @@ import ViewAdminStore from './ViewAdminStore'
 
 const AdminStoreFronts = () => {
   const [storeFront, setStoreFront] = useState()
-  const { id } = useParams()
+  const { username } = useParams()
+  
 
   // need the store id
   // const getStoreId = async() => {
@@ -16,7 +17,7 @@ const AdminStoreFronts = () => {
   useEffect(() => {
     // axios.get(`http://localhost:8080/images/6306a139c3c0830cd1da2113`)
     //   .then((res) => console.log(res.data))
-      axios.get(`http://localhost:8080/store-front/${id}`)
+      axios.get(`http://localhost:8080/store-front/${username}`)
       .then((res) => setStoreFront(res.data))
   }, [])
 
@@ -31,7 +32,7 @@ console.log(storeFront)
   <div>
     <h1>Admin Store Fronts</h1>
     {storeFront.map((stores) => (
-      <ViewAdminStore key={stores.id} owner={stores.owner} sellerid= {id} storeName={stores.storeName}/>
+      <ViewAdminStore key={stores.id} owner={stores.owner} sellername= {username} storeName={stores.storeName} id={stores.id}/>
     ))}
   </div>
 

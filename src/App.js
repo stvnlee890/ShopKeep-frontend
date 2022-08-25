@@ -25,7 +25,7 @@ function App() {
 
         <Route path='/:username/adminpage' element={<AdminPage />}>
           <Route path='setstore' element={<SetStore />} />
-          <Route path='view-admin-store/:id' element={<AdminStoreFronts /> } />
+          <Route path='view-admin-store' element={<AdminStoreFronts /> } />
         </Route>
           <Route path='/upload-images/:storeid' element={<UploadImages />} />
      
