@@ -6,9 +6,8 @@ import { useParams, useNavigate } from 'react-router-dom'
 const UploadImages = () => {
   const { storeid } = useParams()
   const [uploadImages, setUploadImages] = useState()
-  const [deleteImage, setDeleteImage] = useState(false)
   const [imageUrl, setImageUrl] = useState('')
- 
+
   const navigate = useNavigate()
   const username = window.localStorage.getItem('user')
 
@@ -16,11 +15,13 @@ const UploadImages = () => {
     formData.append('image', uploadImages)
     formData.append('storeFront', storeid)
 
+  // HANDLES UPLOAD IMAGES
   const handleChange = (event) => {
     const files = event.target.files[0]
     setUploadImages(files)
   }
-console.log(imageUrl)
+
+  // SUBMITS FORM
   const handleSubmit = (event) => {
     if(!uploadImages){
       alert('please upload an image')
@@ -35,56 +36,54 @@ console.log(imageUrl)
       .catch((err) => console.log(err))
     }
   }
-
-
-  // NEED TO SEND HEADERS OF STORE-FRONT ID TO POPULATE DATA
-  // HEADERS: { storeFront: useParams() }
   
-  
+  // GET IMAGES
   useEffect(() => {
     axios.get(`http://localhost:8080/images/${storeid}` )
     .then((res) => setImageUrl(res.data))
   },[uploadImages])
   
-  // if want to re render the page you can't set it back to upload('') because the upload will be empty since you're not submitting anything new
+  // DELETES IMAGE
   const handleDelete = (event) => {
     event.preventDefault()
     const imageKey = event.target.id
     axios.delete(`http://localhost:8080/images/${imageKey}`)
-      const newImageUrl = imageUrl.filter(image => image.imageKey !== imageKey)
-      console.log(newImageUrl)
-      setImageUrl(newImageUrl)  
+      .then(() => {
+        const newImageUrl = imageUrl.filter(image => image.imageKey !== imageKey)
+        console.log(newImageUrl)
+        setImageUrl(newImageUrl)  
+      })
+      .catch((err) => console.log(err))
   }
-  
+
+  // NAVIGATES USER TO ADMIN PAGE AFTER FINISHING THEIR EDIT
   const handleClick = () => {
     navigate(`/${username}/adminpage`)
   }
+
   return (
     <div>
       <h1>Upload Images</h1>
       <form onSubmit={handleSubmit} >
         <input 
-        onChange={handleChange}
-        type='file'
-        id='image'
-        accept='image/*'
+          onChange={handleChange}
+          type='file'
+          id='image'
+          accept='image/*'
         >
         </input>
         <button type='submit'>Submit</button>
       </form>
-      <div>
+    <div>
       {!imageUrl.length ? console.log('image loading') : imageUrl.map((images) => (
         <Image 
-        key={images._id} 
-        imageUrl={images} 
-
-        id={images.imageKey} 
-        handleDelete={handleDelete} />
-  
+          key={images._id} 
+          imageUrl={images} 
+          id={images.imageKey} 
+          handleDelete={handleDelete} />
       ))}
-      </div>
+    </div>
       <button type='submit' onClick={handleClick} >Finished</button>
-
     </div>
   )
 }

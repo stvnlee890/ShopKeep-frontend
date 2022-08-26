@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react'
 
 const NavBar = () => {
 const [isLoggedIn, setIsLoggedIn] = useState()
-const [username, setUsername] = useState()
 
 const localStorageLogin = window.localStorage.getItem('isLoggedIn')
-
+const username = window.localStorage.getItem('user')
 // const localStorage = () => {
 //   setUsername(window.localStorage.getItem('user'))
 //   setIsLoggedIn(window.localStorage.getItem('isLoggedIn'))

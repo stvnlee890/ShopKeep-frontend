@@ -10,16 +10,30 @@ console.log(id)
     axios.get(`http://localhost:8080/images/${id}` )
       .then((res) => setImageUrl(res.data))
   },[])
-  console.log(imageUrl)
+
+console.log(imageUrl)
+
+  // if(sellername === username) {
+  //   console.log(owner)
+  // }
+  // if(!imageUrl){
+  //   return (
+  //     <p>Your store-front is empty</p>
+  //   )
+  // } else {
+  //   return (
+  //     <div>
+  //       <img alt='image' src={imageUrl[0].imageUrl}/>
+  //       <p>{`$${price}`}</p>
+  //     </div>
+  //   )
+  // }
 
 
-  if(sellername === username) {
-    console.log(owner)
-  }
   return (
     <div>
       <h1>{storeName}</h1>
-      {!imageUrl ? <p>loading</p> : <img alt='image' src={imageUrl[0].imageUrl}/>}
+      {!imageUrl ? console.log('loading') : <img alt='image' src={imageUrl[0].imageUrl}/>}
       <p>{`$${price}`}</p>
     </div>
   )
