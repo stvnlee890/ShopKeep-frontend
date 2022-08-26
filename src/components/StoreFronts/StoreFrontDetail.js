@@ -19,7 +19,7 @@ if(!storeDetails){
   )
 }
   return (
-    <div>
+    <div className='store-front-detail'>
       <h2>Details Page</h2>
       <h3>{`$${storeDetails.price}`}</h3>
       <StoreImages />

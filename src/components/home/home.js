@@ -1,3 +1,4 @@
+import './home.css'
 import StoreFronts from "../StoreFronts/StoreFronts"
 import { useEffect, useState } from 'react' 
 import axios from 'axios'
@@ -17,15 +18,17 @@ if(!setStore){
 
 if(store){
   return (
-    <div>
+    <div className='homepage'>
       <h1>Home</h1>
-      <h3>Seller Store Front</h3>
+      <h3>See who's selling what</h3>
+      <div className='homepage store-fronts'>
       {store.map((store) => (
         <StoreFronts 
         key={store._id}
         store={store}
         />
       ))}
+      </div>
     </div>
   )
 

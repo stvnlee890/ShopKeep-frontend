@@ -1,3 +1,4 @@
+import '../home/home.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -11,22 +12,21 @@ const StoreFronts = ({ store }) => {
       .then((res) => setImageUrl(res.data))
   },[])
   console.log(imageUrl)
-
+console.log(store)
   if(!imageUrl){
     console.log('loading')
   }
 
   return (
-    <div>
-      <h2>{store.username}</h2>
+    <div className='store-front homepage'>
       {!imageUrl ? console.log('loading') : 
       <img 
+      className='homepage image'
       onClick={() => {navigate(`/${store._id}/${store.storeName}`)}}
       alt={imageUrl[0].imageKey} 
       src={imageUrl[0].imageUrl}
-
       />}
-      <p>{store.username}</p>
+      <p className='homepage store-front price' >USD ${store.price}</p>
     </div>
   )
 }

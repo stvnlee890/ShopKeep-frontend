@@ -1,0 +1,17 @@
+
+
+
+.homepage.store-fronts {
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.store-front.homepage {
+  margin-top: 40px;
+  margin: 5px;
+  border: 2px solid red; 
+}
+.homepage.store-front.price {
+  font-weight: bold;
+}

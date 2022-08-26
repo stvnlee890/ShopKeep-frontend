@@ -1,6 +1,8 @@
+import '../home/home.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+
 
 const StoreImages = () => {
   const [imageUrl, setImageUrl] = useState('')
@@ -11,7 +13,6 @@ const StoreImages = () => {
       .then((res) => setImageUrl(res.data))
   },[])
 
-    console.log(imageUrl)
   return (
     <div>
       {!imageUrl ? console.log('loading') :
