@@ -23,7 +23,7 @@ console.log(admin)
   return (
     <div>
       {!admin ? console.log('loading') : <h5>Welcome {admin.firstName}</h5> }
-      <p>Here are the steps to set up your store-front</p>
+      <p>Step 1 of 2: Enter </p>
       {!admin ? console.log('loading') : <ItemDetailForm username={ username } token={token} id={admin._id}/>}
     </div>
   )

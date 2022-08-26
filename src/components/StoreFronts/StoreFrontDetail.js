@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom' 
+import { useParams, useNavigate } from 'react-router-dom' 
 import StoreImages from './StoreImages'
 
 const StoreFrontDetail = () => {
+const navigate = useNavigate()
 const [storeDetails, setStoreDetails] = useState()
 const { storeid } = useParams()
 
@@ -27,6 +28,7 @@ if(!storeDetails){
       <p>Price: {`$${storeDetails.price}`}</p>
       <p>Description: {storeDetails.description}</p>
       <p>Color: {storeDetails.color}</p>
+      <button onClick={() => navigate('/pay')} >Buy now</button>
     </div>
   )
 }

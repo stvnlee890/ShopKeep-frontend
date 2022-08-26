@@ -11,6 +11,7 @@ import Navbar from './components/navbar/NavBar';
 import AdminStoreFronts from './components/admin/AdminStoreFronts';
 import Signout from './components/signup-login/Signout';
 import StoreFrontDetail from './components/StoreFronts/StoreFrontDetail';
+import PaymentPage from './components/paypage/PaymentPage';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signout' element={<Signout />} />
         <Route path='/:storeid/:storename' element={<StoreFrontDetail />} />
+        <Route path='/pay' element={<PaymentPage />} />
         {/* SECURED ROUTES */}
         <Route path='/:username/adminpage' element={<AdminPage />}>
           <Route path='setstore' element={<SetStore />} />
