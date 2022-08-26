@@ -8,7 +8,6 @@ const AdminPage = () => {
   const { username } = useParams()
   const navigate = useNavigate()
   const [user, setUser] = useState()
-  const [profileImage, setProfileImage] = useState()
 
   useEffect(() => {
     axios.get(`http://localhost:8080/user/${username}`)
@@ -28,16 +27,17 @@ const AdminPage = () => {
       <div>
         <ProfilePic 
         userid={user._id}
+        userFirstName={user.firstName}
+        userEmail={user.email}
         handleClick={handleClick}
         />
-
-        <h1>{user.firstName}</h1>
-        <p>{user.email}</p>
       </div>
+      {!user.isAdmin ? null:
       <nav>
         <Link to='setstore'>Start Selling</Link>
         <Link to={`view-admin-store`}>See Store Front</Link>
       </nav>
+      }
       <Outlet />
     </>
   )
