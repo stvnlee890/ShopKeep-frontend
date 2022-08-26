@@ -1,3 +1,4 @@
+import './nav.css'
 import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -12,19 +13,23 @@ console.log(isLoggedIn)
 
   if(localStorageLogin === 'true') {
     return (
-      <div>
-        <NavLink id='signout' to='/signout'>Signout</NavLink>
-        <NavLink to={`${username}/adminpage`}>Profile</NavLink>
-        <NavLink to='/'><h1>ShopKeep</h1></NavLink>
+      <div className='nav-container'>
+        <div className='logo'>
+          <NavLink className='nav' id='shopkeep' to='/'><p>ShopKeep</p></NavLink>
+        </div>
+        <div className='user-feature'>
+          <NavLink className='nav' id='signout' to='/signout'><p>Sign Out</p></NavLink>
+          <NavLink className='nav' id='profile' to={`${username}/adminpage`}><p>Profile</p></NavLink>
+      </div>
       </div>
     )
   }  
   else if(localStorageLogin === null){
     return  (
-      <div> 
-        <NavLink to='/signup'>Sign Up</NavLink>
-        <NavLink to='/login'>Login</NavLink>
-        <NavLink to='/'><h1>ShopKeep</h1></NavLink>
+      <div className='nav-container' > 
+        <NavLink className='nav' id='shopkeep' to='/'><p>ShopKeep</p></NavLink>
+        <NavLink className='nav' id='signup' to='/signup'><p>Sign Up</p></NavLink>
+        <NavLink className='nav' id='login' to='/login'><p>Login</p></NavLink>
       </div>
     )
   }

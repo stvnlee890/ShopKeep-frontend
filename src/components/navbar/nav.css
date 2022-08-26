@@ -1,0 +1,25 @@
+
+.nav-container {
+
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #c2c2c2
+}
+
+.nav {
+  text-decoration: none;
+  color: black
+}
+
+.logo {
+  padding-left: 20px;
+}
+
+.user-feature {
+  display: inline-flex;
+  align-items: self-end;
+  padding-right: 20px;
+}
+#signout {
+  padding-right: 30px
+}
