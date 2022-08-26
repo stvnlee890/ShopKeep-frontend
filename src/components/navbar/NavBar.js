@@ -2,32 +2,33 @@ import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const NavBar = () => {
-const [isLoggedIn, setIsLoggedIn] = useState('')
-const [username, setUsername] = useState('')
+const [isLoggedIn, setIsLoggedIn] = useState()
+const [username, setUsername] = useState()
 
+const localStorageLogin = window.localStorage.getItem('isLoggedIn')
 
-const localStorage = () => {
-  setUsername(window.localStorage.getItem('user'))
-  setIsLoggedIn(window.localStorage.getItem('isLoggedIn'))
-}
+// const localStorage = () => {
+//   setUsername(window.localStorage.getItem('user'))
+//   setIsLoggedIn(window.localStorage.getItem('isLoggedIn'))
+// }
 
-useEffect(() => {
-  localStorage()
- },[isLoggedIn])
+// useEffect(() => {
+//     localStorage()
+//  },[isLoggedIn])
+ 
 
-console.log(username)
+console.log(isLoggedIn)
 
-  if(isLoggedIn === 'true') {
+  if(localStorageLogin === 'true') {
     return (
       <div>
-        <NavLink to='/signout'>Signout</NavLink>
+        <NavLink id='signout' to='/signout'>Signout</NavLink>
         <NavLink to={`${username}/adminpage`}>Profile</NavLink>
         <NavLink to='/'><h1>ShopKeep</h1></NavLink>
       </div>
     )
-  } 
-
-  if(isLoggedIn !== 'true'){
+  }  
+  else if(localStorageLogin === null){
     return  (
       <div> 
         <NavLink to='/signup'>Sign Up</NavLink>

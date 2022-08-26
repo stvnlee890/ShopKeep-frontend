@@ -14,7 +14,7 @@ const Login = () => {
 
   const [userLogin, setUserLogin] = useState(initialFormState)
   const [token, setToken] = useState()
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
   const handleChange = (event) => {
@@ -33,6 +33,7 @@ const Login = () => {
           window.localStorage.setItem('token', data.token)
           window.localStorage.setItem('user', data.user.username)
           window.localStorage.setItem('isLoggedIn', true)
+  
           navigate(`/${data.user.username}/adminpage`)
         }else {
           navigate('/')
