@@ -12,6 +12,7 @@ import AdminStoreFronts from './components/admin/AdminStoreFronts';
 import Signout from './components/signup-login/Signout';
 import StoreFrontDetail from './components/StoreFronts/StoreFrontDetail';
 import PaymentPage from './components/paypage/PaymentPage';
+import UploadProfileImage from './components/admin/UploadProfileImage';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path='setstore' element={<SetStore />} />
           <Route path='view-admin-store' element={<AdminStoreFronts />} />
         </Route>
+          <Route path='/profile-image/:userid' element={<UploadProfileImage />} />
           <Route path='/upload-images/:storeid' element={<UploadImages />} />
      
       </Routes>

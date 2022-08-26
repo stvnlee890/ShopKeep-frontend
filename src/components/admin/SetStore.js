@@ -22,8 +22,7 @@ console.log(admin)
 
   return (
     <div>
-      {!admin ? console.log('loading') : <h5>Welcome {admin.firstName}</h5> }
-      <p>Step 1 of 2: Enter </p>
+      <p>Step 1 of 2 </p>
       {!admin ? console.log('loading') : <ItemDetailForm username={ username } token={token} id={admin._id}/>}
     </div>
   )
