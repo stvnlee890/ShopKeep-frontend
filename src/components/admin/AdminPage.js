@@ -2,6 +2,7 @@ import '../../App.css';
 import axios from 'axios'
 import { Link, Navigate, Outlet, useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import ProfilePic from './ProfilePic';
 
 const AdminPage = () => {
   const { username } = useParams()
@@ -25,16 +26,10 @@ const AdminPage = () => {
   return (
     <>
       <div>
-        {!profileImage ? 
-  
-        <img onClick={handleClick}
-        className='profile-image' 
-        alt='default Image' 
-        src='https://www.solidbackgrounds.com/images/1920x1080/1920x1080-bottle-green-solid-color-background.jpg'/> :
-        <img 
-        alt={profileImage.username} 
-        src={profileImage.imageUrl} />
-      }
+        <ProfilePic 
+        userid={user._id}
+        handleClick={handleClick}
+        />
 
         <h1>{user.firstName}</h1>
         <p>{user.email}</p>

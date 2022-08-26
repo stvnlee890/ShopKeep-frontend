@@ -21,7 +21,7 @@ const [imageUrl, setImageUrl] = useState('')
     console.log(imageUrl)
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/images/profile-image/63055658f0d239e7c78864e9` )
+        axios.get(`http://localhost:8080/images/profile-image/${userid}` )
         .then((res) => setImageUrl(res.data))
     },[uploadImages])
     
