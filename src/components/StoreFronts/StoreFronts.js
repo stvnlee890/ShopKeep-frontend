@@ -1,8 +1,10 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const StoreFronts = ({ store }) => {
   const [imageUrl, setImageUrl] = useState('')
+  const navigate = useNavigate()
   // GET ALL STORE FRONTS
   useEffect(() => {
     axios.get(`http://localhost:8080/images/${store._id}` )
@@ -17,7 +19,13 @@ const StoreFronts = ({ store }) => {
   return (
     <div>
       <h2>{store.username}</h2>
-      {!imageUrl ? console.log('loading') : <img alt={imageUrl[0].imageKey} src={imageUrl[0].imageUrl}/>}
+      {!imageUrl ? console.log('loading') : 
+      <img 
+      onClick={() => {navigate(`/${store._id}/${store.storeName}`)}}
+      alt={imageUrl[0].imageKey} 
+      src={imageUrl[0].imageUrl}
+
+      />}
       <p>{store.username}</p>
     </div>
   )

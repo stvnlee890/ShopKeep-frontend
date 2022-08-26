@@ -10,6 +10,7 @@ import AdminPage from './components/admin/AdminPage';
 import Navbar from './components/navbar/NavBar';
 import AdminStoreFronts from './components/admin/AdminStoreFronts';
 import Signout from './components/signup-login/Signout';
+import StoreFrontDetail from './components/StoreFronts/StoreFrontDetail';
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signout' element={<Signout />} />
-
+        <Route path='/:storeid/:storename' element={<StoreFrontDetail />} />
+        {/* SECURED ROUTES */}
         <Route path='/:username/adminpage' element={<AdminPage />}>
           <Route path='setstore' element={<SetStore />} />
           <Route path='view-admin-store' element={<AdminStoreFronts />} />
