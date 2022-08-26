@@ -1,20 +1,7 @@
-import { Link, Outlet, useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { Link, Outlet } from 'react-router-dom'
 
 const AdminPage = () => {
-  const [sellerstore, setSellerStore] = useState()
-  // const { username } = useParams()
 
-  // GET USER ID AND QUERY THE DB FOR STORE FRONTS THAT MATCH THE ID WITH THE STORE FRONT
-
-  // useEffect(() => {
-  //   axios.get(`http://localhost:8080/user/${username}`)
-  //     .then((res) => setSellerStore(res.data._id))
-  // },[])
-
-
-  // console.log(sellerstore)
   return (
     <>
       <div>

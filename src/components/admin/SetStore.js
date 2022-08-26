@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import ItemDetailForm from './ItemDetailForm'
 
 const SetStore = () => {
-  const [store, setStore] = useState()
   const [admin, setAdmin] = useState()
   const { username } = useParams()
 

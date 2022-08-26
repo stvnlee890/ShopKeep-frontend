@@ -1,9 +1,5 @@
-import axios from "axios"
-import { useEffect, useState } from 'react'
-import UploadImages from "./UploadImages"
 
 const Image = ({ imageUrl, handleDelete }) => {
-
 
   return (
     <div>
