@@ -1,41 +1,35 @@
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import EditStoreFront from './EditStoreFront'
 
-const ViewAdminStore = ({ owner, sellername, storeName, id, price }) => {
+const ViewAdminStore = ({ owner, sellername, storeName, id, price, handleDelete }) => {
   const { username } = useParams()
   const [imageUrl, setImageUrl] = useState()
-console.log(id)
+  const navigate = useNavigate()
+
+
   useEffect(() => {
     axios.get(`http://localhost:8080/images/${id}` )
       .then((res) => setImageUrl(res.data))
   },[])
 
-console.log(imageUrl)
 
-  // if(sellername === username) {
-  //   console.log(owner)
-  // }
-  // if(!imageUrl){
-  //   return (
-  //     <p>Your store-front is empty</p>
-  //   )
-  // } else {
-  //   return (
-  //     <div>
-  //       <img alt='image' src={imageUrl[0].imageUrl}/>
-  //       <p>{`$${price}`}</p>
-  //     </div>
-  //   )
-  // }
+  const handleClick = () => {
+    navigate(`/edit-store-front/${id}`)
+  }
 
 
   return (
+    <>
     <div>
-      <h1>{storeName}</h1>
+      <h3>{storeName}</h3>
       {!imageUrl ? console.log('loading') : <img alt='image' src={imageUrl[0].imageUrl}/>}
       <p>{`$${price}`}</p>
+        <button onClick={handleDelete} id={id}>delete</button>
     </div>
+
+    </>
   )
 }
 

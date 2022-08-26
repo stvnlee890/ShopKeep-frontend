@@ -6,15 +6,7 @@ const [isLoggedIn, setIsLoggedIn] = useState()
 
 const localStorageLogin = window.localStorage.getItem('isLoggedIn')
 const username = window.localStorage.getItem('user')
-// const localStorage = () => {
-//   setUsername(window.localStorage.getItem('user'))
-//   setIsLoggedIn(window.localStorage.getItem('isLoggedIn'))
-// }
 
-// useEffect(() => {
-//     localStorage()
-//  },[isLoggedIn])
- 
 
 console.log(isLoggedIn)
 
