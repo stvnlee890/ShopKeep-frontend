@@ -4,11 +4,13 @@ import { useParams } from 'react-router-dom'
 import ViewAdminStore from './ViewAdminStore'
 
 const AdminStoreFronts = () => {
-  const [storeFront, setStoreFront] = useState()
+  const [storeFront, setStoreFront] = useState('')
   const { username } = useParams()
 console.log(storeFront)
-  useEffect(() => {
-      axios.get(`http://localhost:8080/store-front/${username}`)
+
+// FETCH STORE-FRONTS
+useEffect(() => {
+    axios.get(`http://localhost:8080/store-front/${username}`)
       .then((res) => setStoreFront(res.data))
   }, [])
 console.log(storeFront)
@@ -20,7 +22,7 @@ const handleDelete = (event) => {
   const imageKey = event.target.id
   axios.delete(`http://localhost:8080/images/store-front/${imageKey}`)
     .then(() => {
-      const newStoreFront = storeFront.filter(storeFront => storeFront.id !== imageKey)
+      const newStoreFront = storeFront.filter(storeFront => storeFront._id !== imageKey)
       console.log(newStoreFront)
       setStoreFront(newStoreFront)  
     })
