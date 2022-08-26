@@ -10,7 +10,7 @@ import AdminPage from './components/admin/AdminPage';
 import Navbar from './components/navbar/NavBar';
 import AdminStoreFronts from './components/admin/AdminStoreFronts';
 import Signout from './components/signup-login/Signout';
-import EditStoreFront from './components/admin/EditStoreFront';
+
 
 function App() {
   return (
@@ -29,7 +29,6 @@ function App() {
           <Route path='view-admin-store' element={<AdminStoreFronts />} />
         </Route>
           <Route path='/upload-images/:storeid' element={<UploadImages />} />
-          <Route path='/edit-store-front/:storefrontid' element={<EditStoreFront />} />
      
       </Routes>
     </div>

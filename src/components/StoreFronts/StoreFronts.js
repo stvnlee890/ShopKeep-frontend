@@ -1,18 +1,24 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-const StoreFronts = () => {
-  
+const StoreFronts = ({ store }) => {
+  const [imageUrl, setImageUrl] = useState('')
   // GET ALL STORE FRONTS
   useEffect(() => {
-    axios.get(`http://localhost:8080/store-front/`)
-      .then((res) => console.log(res.data))
+    axios.get(`http://localhost:8080/images/${store._id}` )
+      .then((res) => setImageUrl(res.data))
   },[])
-  
+  console.log(imageUrl)
+
+  if(!imageUrl){
+    console.log('loading')
+  }
+
   return (
     <div>
-      <h1>Seller Store Fronts</h1>
-      <p>Sellers list</p>
+      <h2>{store.username}</h2>
+      {!imageUrl ? console.log('loading') : <img alt={imageUrl[0].imageKey} src={imageUrl[0].imageUrl}/>}
+      <p>{store.username}</p>
     </div>
   )
 }
