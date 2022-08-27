@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
+
 .App {
   text-align: center;
   max-width: 100%;
+  font-family: 'Poppins', sans-serif;
 }
 
 

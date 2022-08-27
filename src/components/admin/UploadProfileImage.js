@@ -70,7 +70,7 @@ const [imageUrl, setImageUrl] = useState('')
         </input>
         <button type='submit'>Submit</button>
       </form>
-      {!imageUrl.length ? <p>loading</p> : 
+      {!imageUrl.length ? null : 
       imageUrl.map((images) => (
         <ProfileImage
           key={images._id} 

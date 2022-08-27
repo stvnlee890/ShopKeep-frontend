@@ -14,10 +14,10 @@ const StoreImages = () => {
   },[])
 
   return (
-    <div>
+    <div className='store-front-details-container'>
       {!imageUrl ? console.log('loading') :
       imageUrl.map((images) => (
-        <img 
+        <img id='store-front-details-images'
         key={images.imageKey} 
         alt={images.imageKey} 
         src={images.imageUrl} />

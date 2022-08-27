@@ -27,3 +27,30 @@
   font-weight: bold;
   font-size: 20px;
 }
+
+.store-front-detail {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  max-width: 100%;
+}
+.store-front-details-container {
+  /* border: 1px solid red; */
+  max-width: 50%;
+}
+#store-front-details-images {
+  width: 500px;
+  height: 600px;
+}
+.seller-details {
+  /* border: 1px solid red; */
+  max-width: 50%;
+  
+}
+.seller-details-profile {
+  text-align: center;
+}
+
+.seller-details-descriptions {
+  
+}

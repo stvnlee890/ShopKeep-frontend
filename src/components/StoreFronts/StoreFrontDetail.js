@@ -22,18 +22,24 @@ if(!storeDetails){
 }
   return (
     <div className='store-front-detail'>
-      <h2>Details Page</h2>
-      <h3>{`$${storeDetails.price}`}</h3>
+      {/* <h2>Details Page</h2> */}
+      {/* <h3>{`$${storeDetails.price}`}</h3> */}
       <StoreImages />
-      <StoreFrontSellerPic 
-      user={storeDetails.owner}
-      />
-      <h3>{storeDetails.storeName}</h3>
-      <h3>{storeDetails.username}</h3>
-      <p>Price: {`$${storeDetails.price}`}</p>
-      <p>Description: {storeDetails.description}</p>
-      <p>Color: {storeDetails.color}</p>
-      <button onClick={() => navigate('/pay')} >Buy now</button>
+      <div className='seller-details'>
+        <div className='seller-details-profile' >
+          <StoreFrontSellerPic 
+          user={storeDetails.owner}
+          />
+          <h3>{storeDetails.storeName}</h3>
+          <h3>{storeDetails.username}</h3>
+        </div>
+        <div className='seller-details-descriptions' >
+          <p>Price: {`$${storeDetails.price}`}</p>
+          <p>Description: {storeDetails.description}</p>
+          <p>Color: {storeDetails.color}</p>
+          <button onClick={() => navigate('/pay')} >Buy now</button>
+        </div>
+      </div>
     </div>
   )
 }
