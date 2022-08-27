@@ -43,7 +43,7 @@
 .button {
   display: flex;
   justify-content: center;
-  background: #f28211;
+  background: black;
   height: 50px
 }
 #buy-now-button {
@@ -52,6 +52,7 @@
   border: none;
   color: white;
   font-size: 18px;
+  width: 100%;
 }
 /* .item-details {
   display: flex;

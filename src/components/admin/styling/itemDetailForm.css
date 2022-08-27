@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
+
+
+.item-detail-form-container {
+  max-width: 100%;
+  text-align: center;
+}
+.item-detail-form {
+  margin-left: 200px;
+  margin-right: 200px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.label {
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 40px;
+  
+}
+.input {
+  font-family: 'Poppins', sans-serif;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #dedede;
+  margin-top: 40px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
