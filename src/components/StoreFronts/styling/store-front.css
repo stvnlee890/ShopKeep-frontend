@@ -27,14 +27,40 @@
   max-width: 50%;
   
 }
+.item-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family:'Poppins', sans-serif;
+  border-bottom: 1px solid #dedede;
+  margin-top: 20px;
+}
+.description {
+  text-align: end
+}
 .seller-details-profile {
   text-align: center;
 }
-.item-details {
+.button {
+  display: flex;
+  justify-content: center;
+  background: #f28211;
+  height: 50px
+}
+#buy-now-button {
+  font-family:'Poppins', sans-serif;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+}
+/* .item-details {
   display: flex;
   justify-content: space-between;
   font-family:'Poppins', sans-serif;
   border-bottom: 1px solid #dedede;
   margin-top: 20px;
-}
+}  */
 
+/* #item-description {
+  margin: 100px;
+} */

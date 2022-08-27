@@ -41,14 +41,23 @@ if(!storeDetails){
             <span className='description' >{`$${storeDetails.price}`}</span>
           </p>
           <p className='item-details'>
+          {/* <div id='item-description-container'> */}
             <span className='form-label'>Description:</span> 
-            <span className='description' id='item-description'>{storeDetails.description}</span>
+            <span className='description'>{storeDetails.description}</span>
+          {/* </div> */}
           </p>
           <p className='item-details'>
             <span className='form-label'>Color:</span> 
             <span className='description'>{storeDetails.color}</span>
           </p>
-          <button onClick={() => navigate('/pay')} >Buy now</button>
+        </div>
+        <div className='button'>
+          <button 
+          id='buy-now-button'
+          onClick={() => navigate('/pay')}
+          >
+            Buy now
+          </button>
         </div>
       </div>
     </div>
