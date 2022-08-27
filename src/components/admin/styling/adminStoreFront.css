@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
+
+.admin-store-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  font-family:'Poppins', sans-serif;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.admin-store-front {
+  text-align: center;
+}
+
+.admin-store-delete-button {
+  font-size: 18px;
+  cursor: pointer;
+  font-family:'Poppins', sans-serif;
+  background: none;
+  border: none;
+  color: red;
+  font-size: 18px;
+  width: 100%;
+}

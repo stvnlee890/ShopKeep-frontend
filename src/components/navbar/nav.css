@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
 
 .nav-container {
-
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #dedede
@@ -18,9 +17,11 @@
   font-weight: 600;
   font-size: 20px;
 }
+
 #shopkeep {
   color: #eb1a1a
 }
+
 .user-feature {
   display: inline-flex;
   align-items: self-end;
@@ -30,7 +31,8 @@
   padding-bottom: 8px;
   font-size: 14px;
 }
-#signout {
+
+#profile {
   padding-right: 30px
 }
 #signup {

@@ -11,13 +11,21 @@ const ViewAdminStore = ({ storeName, id, price, handleDelete }) => {
 
   return (
     <>
-    <div>
+    <div className='admin-store-front'>
       <h3>{storeName}</h3>
-      {!imageUrl ? console.log('loading') : <img alt={imageUrl[0].imageKey} src={imageUrl[0].imageUrl}/>}
+      {!imageUrl ? console.log('loading') : 
+      <img 
+        alt={imageUrl[0].imageKey} 
+        src={imageUrl[0].imageUrl}/>}
       <p>{`$${price}`}</p>
-        <button onClick={handleDelete} id={id}>delete</button>
+      <div id='admin-store-delete-button-container'>
+        <button 
+          onClick={handleDelete} 
+          className='admin-store-delete-button'
+          id={id}>delete
+        </button>
+      </div>
     </div>
-
     </>
   )
 }

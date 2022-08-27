@@ -18,8 +18,8 @@ console.log(isLoggedIn)
           <NavLink className='nav' id='shopkeep' to='/'><p>ShopKeep</p></NavLink>
         </div>
         <div className='user-feature'>
-          <NavLink className='nav' id='signout' to='/signout'><p>Sign Out</p></NavLink>
           <NavLink className='nav' id='profile' to={`${username}/adminpage`}><p>Profile</p></NavLink>
+          <NavLink className='nav' id='signout' to='/signout'><p>Sign Out</p></NavLink>
       </div>
       </div>
     )

@@ -1,3 +1,4 @@
+import './styling/adminStoreFront.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -36,18 +37,17 @@ const handleDelete = (event) => {
   }
   if(storeFront){
     return(
-    <div>
-      <h1>Admin Store Fronts</h1>
+    <div className='admin-store-container'>
       {storeFront.map((stores) => (
         <ViewAdminStore 
-        key={stores._id} 
-        owner={stores.owner} 
-        sellername= {username} 
-        storeName={stores.storeName} 
-        price={stores.price}
-        handleDelete={handleDelete}
-        id={stores._id}/>
-      ))}
+          key={stores._id} 
+          owner={stores.owner} 
+          sellername= {username} 
+          storeName={stores.storeName} 
+          price={stores.price}
+          handleDelete={handleDelete}
+          id={stores._id}/>
+       ))}
     </div>
   
     )
