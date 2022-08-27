@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
 
 .nav-container {
 
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #c2c2c2
+  border-bottom: 1px solid #dedede
 }
 
 .nav {
@@ -12,13 +13,22 @@
 }
 
 .logo {
-  padding-left: 20px;
+  padding-left: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
 }
-
+#shopkeep {
+  color: #eb1a1a
+}
 .user-feature {
   display: inline-flex;
   align-items: self-end;
   padding-right: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  padding-bottom: 8px;
+  font-size: 14px;
 }
 #signout {
   padding-right: 30px

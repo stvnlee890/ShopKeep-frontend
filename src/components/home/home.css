@@ -10,7 +10,7 @@
 .store-front.homepage {
   margin-top: 40px;
   margin: 5px;
-  border: 2px solid red; 
+  /* border: 2px solid red;  */
 }
 .homepage.store-front.price {
   font-weight: bold;
