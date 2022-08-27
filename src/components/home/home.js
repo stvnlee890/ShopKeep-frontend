@@ -19,8 +19,7 @@ if(!setStore){
 if(store){
   return (
     <div className='homepage'>
-      <h1>Home</h1>
-      <h3>See who's selling what</h3>
+      <p className='header' id='header'>See who's selling what</p>
       <div className='homepage store-fronts'>
       {store.map((store) => (
         <StoreFronts 

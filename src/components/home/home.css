@@ -1,17 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
 
+.homepage {
+  max-width: 100%;
 
-
+}
 .homepage.store-fronts {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-left: 40px;
   margin-right: 40px;
 }
 .store-front.homepage {
   margin-top: 40px;
+ 
   margin: 5px;
   /* border: 2px solid red;  */
 }
 .homepage.store-front.price {
   font-weight: bold;
+}
+
+#header {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
 }
