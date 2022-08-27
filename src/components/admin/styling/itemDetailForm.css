@@ -28,3 +28,28 @@
   resize: none;
   outline: none;
 }
+/* .button-container {
+  margin-top: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: black;
+  height: 50px;
+} */
+#item-form-button {
+  cursor: pointer;
+  margin-top: 40px;
+  font-family:'Poppins', sans-serif;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 18px;
+  width: 100%;
+}
+
+#item-detail-form-step {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin-top: 50px;
+  font-size: 14px;
+  /* color: #7a7a7a; */
+}

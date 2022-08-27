@@ -22,7 +22,6 @@ console.log(admin)
 
   return (
     <div>
-      <p>Step 1 of 2 </p>
       {!admin ? console.log('loading') : <ItemDetailForm username={ username } token={token} id={admin._id}/>}
     </div>
   )

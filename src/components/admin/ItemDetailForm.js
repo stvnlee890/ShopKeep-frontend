@@ -48,66 +48,65 @@ const ItemDetailForm = ({ username, token, id }) => {
 
   return (
     <div className='item-detail-form-container'>
-      <h1>Item Detail Form</h1>
-      <form onSubmit={handleSubmit} className='item-detail-form'>
-      
-        <label className='label'>Store Name</label>
+       <p id='item-detail-form-step'>Step 1 of 2 </p>
+      <form onSubmit={handleSubmit} >
+
+      <div className='item-detail-form'>
+        <label className='label'>Store Name:</label>
         <input className='input'
           onChange={handleChange}
-          placeholder="store front name" 
           type='text' 
           id='storeName' 
           value={storeFront.storeName} />
   
-
-        <label className='label'>Price</label>
+        <label className='label'>Price:</label>
         <input className='input'
           onChange={handleChange} 
-          placeholder="price" 
           type='text' 
           id='price' 
           value={storeFront.price} />
 
-        <label className='label'>Size</label>
+        <label className='label'>Size:</label>
         <input className='input'
           onChange={handleChange} 
-          placeholder="size" 
           type='text' 
           id='size' 
           value={storeFront.size} />
 
-        <label className='label'>Condition</label>
+        <label className='label'>Condition:</label>
         <input className='input'
           onChange={handleChange} 
-          placeholder="condition" 
           type='text' 
           id='condition' 
           value={storeFront.condition}/>
 
-        <label className='label'>Color</label>    
+        <label className='label'>Color:</label>    
         <input className='input'
           onChange={handleChange} 
-          placeholder="color" 
           type='text' 
           id='color' 
           value={storeFront.color}/>
 
-        <label className='label'>Description</label> 
+        <label className='label'>Description:</label> 
         <input className='input'
           onChange={handleChange} 
-          placeholder="description" 
           type='text' 
           id='description' 
           value={storeFront.description}/>
 
-        <label className='label'>Category</label>
+        <label className='label'>Category:</label>
         <input className='input'
           onChange={handleChange} 
-          placeholder="category" 
           type='text' 
           id='category' 
           value={storeFront.category}/>
-        <button type="submit">Next</button>
+        </div>
+        <div id='item-form-button-container' >
+          <button 
+            id='item-form-button'
+            type="submit">Next
+          </button>
+        </div>
       </form>
       <Outlet />
     </div>
