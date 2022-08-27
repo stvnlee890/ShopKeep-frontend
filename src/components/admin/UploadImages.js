@@ -1,3 +1,4 @@
+import './styling/uploadImages.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Image from './Image'
@@ -64,17 +65,23 @@ const UploadImages = () => {
   return (
     <div>
       <h1>Upload Images</h1>
-      <form onSubmit={handleSubmit} >
-        <input 
-          onChange={handleChange}
-          type='file'
-          id='image'
-          accept='image/*'
-        >
-        </input>
+      <form onSubmit={handleSubmit}>
+
+        <div className='upload-images-input-container'>
+          <label htmlFor='image' className='upload-images-label'>Upload Images</label>
+          <input className='upload-images-input'
+            onChange={handleChange}
+            name='file'
+            type='file'
+            id='image'
+            accept='image/*'
+          >
+          </input>
         <button type='submit'>Submit</button>
+        </div>
+
       </form>
-    <div>
+    <div className='image-component-images-container'>
       {!imageUrl.length ? console.log('image loading') : imageUrl.map((images) => (
         <Image 
           key={images._id} 
@@ -83,7 +90,11 @@ const UploadImages = () => {
           handleDelete={handleDelete} />
       ))}
     </div>
-      <button type='submit' onClick={handleClick} >Finished</button>
+      <button 
+      type='submit' 
+      onClick={handleClick}>
+        Finished
+      </button>
     </div>
   )
 }
