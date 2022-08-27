@@ -27,9 +27,13 @@ console.log(isLoggedIn)
   else if(localStorageLogin === null){
     return  (
       <div className='nav-container' > 
-        <NavLink className='nav' id='shopkeep' to='/'><p>ShopKeep</p></NavLink>
-        <NavLink className='nav' id='signup' to='/signup'><p>Sign Up</p></NavLink>
-        <NavLink className='nav' id='login' to='/login'><p>Login</p></NavLink>
+         <div className='logo'>
+          <NavLink className='nav' id='shopkeep' to='/'><p>ShopKeep</p></NavLink>
+        </div>
+        <div className='user-feature'>
+         <NavLink className='nav' id='signup' to='/signup'><p>Sign Up</p></     NavLink>
+          <NavLink className='nav' id='login' to='/login'><p>Login</p></NavLink>
+        </div>
       </div>
     )
   }

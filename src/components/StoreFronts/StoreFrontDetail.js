@@ -30,8 +30,8 @@ if(!storeDetails){
           <StoreFrontSellerPic 
           user={storeDetails.owner}
           />
-          <h3>{storeDetails.storeName}</h3>
           <h3>{storeDetails.username}</h3>
+          <h3>{storeDetails.storeName}</h3>
         </div>
         <div className='seller-details-descriptions' >
           <p>Price: {`$${storeDetails.price}`}</p>

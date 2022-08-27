@@ -1,6 +1,7 @@
-import '../../App.css';
+// import '../../App.css';
+import './styling/profile.css'
 import axios from 'axios'
-import { Link, Navigate, Outlet, useParams, useNavigate } from 'react-router-dom'
+import { Link, Outlet, useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import ProfilePic from './ProfilePic';
 
@@ -22,7 +23,7 @@ const AdminPage = () => {
   }
   return (
     <>
-      <div>
+      <div className='profile-pic-container'>
         <ProfilePic 
         userid={user._id}
         userFirstName={user.firstName}
@@ -30,12 +31,14 @@ const AdminPage = () => {
     
         />
       </div>
+      <div className='admin-page-button-container'>
       {!user.isAdmin ? null:
-      <nav>
-        <Link to='setstore'>Start Selling</Link>
-        <Link to={`view-admin-store`}>See Store Front</Link>
+      <nav className='admin-page-button'>
+        <Link id='admin-store-button' to='setstore'><span>Start Selling</span></Link>
+        <Link id='admin-store-button' to={`view-admin-store`}><span>See Store Front</span></Link>
       </nav>
       }
+      </div>
       <Outlet />
     </>
   )

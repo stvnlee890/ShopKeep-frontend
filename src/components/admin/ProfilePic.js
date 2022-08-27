@@ -1,3 +1,4 @@
+import './styling/profile.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
@@ -17,8 +18,7 @@ const ProfilePic = ({ userid, userFirstName, userEmail }) => {
   }
   console.log(userid)
   return (
-    <div>
-      <h2>ProfilePic</h2>
+    <div className='profile' >
       {!profileImage.length ? 
       <img onClick={handleClick}
         className='profile-image' 
@@ -29,8 +29,8 @@ const ProfilePic = ({ userid, userFirstName, userEmail }) => {
         alt={profileImage.username} 
         src={profileImage[0].imageUrl} />
       }
-      <h2>{userFirstName}</h2>
-      <p>{userEmail}</p>
+      <p id='profile-first-name'>{userFirstName}</p>
+      <p id='profile-email'>{userEmail}</p>
     </div>
   )
 }

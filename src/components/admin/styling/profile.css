@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
+
+#profile-first-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+#profile-email {
+  font-family:'Poppins', sans-serif;
+  font-size: 12px;
+  color: #696969
+}
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+}
+.admin-page-button-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+#admin-store-button {
+  text-decoration: none;
+}

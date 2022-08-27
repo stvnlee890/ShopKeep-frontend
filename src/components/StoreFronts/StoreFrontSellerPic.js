@@ -16,7 +16,6 @@ const StoreFrontSellerPic = ({ user }) => {
 console.log(profileImage)
   return (
     <div>
-      <h2>ProfilePic</h2>
       {!profileImage.length ? 
       <img
         className='profile-image' 
