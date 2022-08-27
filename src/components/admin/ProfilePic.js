@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
-const ProfilePic = ({ handleClick, userid, userFirstName, userEmail }) => {
+const ProfilePic = ({ userid, userFirstName, userEmail }) => {
   const [profileImage, setProfileImage] = useState('')
+  const navigate = useNavigate()
   console.log(profileImage)
 
   useEffect(() => {
@@ -11,6 +12,10 @@ const ProfilePic = ({ handleClick, userid, userFirstName, userEmail }) => {
     .then((res) => setProfileImage(res.data))
   },[])
 
+  const handleClick = () => {
+    navigate(`/profile-image/${userid}`)
+  }
+  console.log(userid)
   return (
     <div>
       <h2>ProfilePic</h2>
@@ -19,7 +24,7 @@ const ProfilePic = ({ handleClick, userid, userFirstName, userEmail }) => {
         className='profile-image' 
         alt={profileImage.username} 
         src='https://www.solidbackgrounds.com/images/1920x1080/1920x1080-bottle-green-solid-color-background.jpg'/> :
-      <img 
+      <img onClick={handleClick}
         className='profile-image' 
         alt={profileImage.username} 
         src={profileImage[0].imageUrl} />

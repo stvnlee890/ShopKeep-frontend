@@ -14,9 +14,7 @@ const AdminPage = () => {
       .then((res) => setUser(res.data))
   },[])
 
-  const handleClick = () => {
-    navigate(`/profile-image/${user._id}`)
-  }
+
   if(!user){
     return (
       <p>loading</p>
@@ -29,7 +27,7 @@ const AdminPage = () => {
         userid={user._id}
         userFirstName={user.firstName}
         userEmail={user.email}
-        handleClick={handleClick}
+    
         />
       </div>
       {!user.isAdmin ? null:
