@@ -23,9 +23,7 @@
   height: 600px;
 }
 .seller-details {
-  /* border: 1px solid red; */
   max-width: 50%;
-  
 }
 .item-details {
   display: grid;
@@ -54,14 +52,3 @@
   font-size: 18px;
   width: 100%;
 }
-/* .item-details {
-  display: flex;
-  justify-content: space-between;
-  font-family:'Poppins', sans-serif;
-  border-bottom: 1px solid #dedede;
-  margin-top: 20px;
-}  */
-
-/* #item-description {
-  margin: 100px;
-} */

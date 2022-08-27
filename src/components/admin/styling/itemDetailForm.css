@@ -28,13 +28,7 @@
   resize: none;
   outline: none;
 }
-/* .button-container {
-  margin-top: 40px;
-  margin-left: 200px;
-  margin-right: 200px;
-  background-color: black;
-  height: 50px;
-} */
+
 #item-form-button {
   cursor: pointer;
   margin-top: 40px;
