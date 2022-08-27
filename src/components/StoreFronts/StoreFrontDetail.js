@@ -1,3 +1,4 @@
+import './styling/store-front.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom' 
@@ -33,10 +34,20 @@ if(!storeDetails){
           <h3>{storeDetails.username}</h3>
           <h3>{storeDetails.storeName}</h3>
         </div>
+
         <div className='seller-details-descriptions' >
-          <p>Price: {`$${storeDetails.price}`}</p>
-          <p>Description: {storeDetails.description}</p>
-          <p>Color: {storeDetails.color}</p>
+          <p className='item-details'>
+            <span className='form-label'>Price:</span> 
+            <span className='description' >{`$${storeDetails.price}`}</span>
+          </p>
+          <p className='item-details'>
+            <span className='form-label'>Description:</span> 
+            <span className='description' id='item-description'>{storeDetails.description}</span>
+          </p>
+          <p className='item-details'>
+            <span className='form-label'>Color:</span> 
+            <span className='description'>{storeDetails.color}</span>
+          </p>
           <button onClick={() => navigate('/pay')} >Buy now</button>
         </div>
       </div>

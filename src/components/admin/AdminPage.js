@@ -35,7 +35,7 @@ const AdminPage = () => {
       {!user.isAdmin ? null:
       <nav className='admin-page-button'>
         <Link id='admin-store-button' to='setstore'><span>Start Selling</span></Link>
-        <Link id='admin-store-button' to={`view-admin-store`}><span>See Store Front</span></Link>
+        <Link id='admin-store-button' to={`view-admin-store`}><span>Store Front</span></Link>
       </nav>
       }
       </div>

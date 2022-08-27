@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
+
+
+#header {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.store-front-detail {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  max-width: 100%;
+}
+.store-front-details-container {
+  /* border: 1px solid red; */
+  max-width: 50%;
+}
+#store-front-details-images {
+  width: 500px;
+  height: 600px;
+}
+.seller-details {
+  /* border: 1px solid red; */
+  max-width: 50%;
+  
+}
+.seller-details-profile {
+  text-align: center;
+}
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  font-family:'Poppins', sans-serif;
+  border-bottom: 1px solid #dedede;
+  margin-top: 20px;
+}
+
