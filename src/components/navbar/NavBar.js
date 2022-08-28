@@ -3,15 +3,20 @@ import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const NavBar = () => {
-const [isLoggedIn, setIsLoggedIn] = useState()
+const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 const localStorageLogin = window.localStorage.getItem('isLoggedIn')
 const username = window.localStorage.getItem('user')
 
+useEffect(() => {
+  if(localStorageLogin === 'true'){
+    setIsLoggedIn(true)
+  }
+},[])
 
 console.log(isLoggedIn)
 
-  if(localStorageLogin === 'true') {
+  if(isLoggedIn === true) {
     return (
       <div className='nav-container'>
         <div className='logo'>

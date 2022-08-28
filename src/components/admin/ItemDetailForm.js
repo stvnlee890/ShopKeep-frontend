@@ -33,18 +33,22 @@ const ItemDetailForm = ({ username, token, id }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    axios.post('http://localhost:8080/store-front/admin', storeFront, {headers})
-          .then((res) => {
-            setNewStore(res.data) 
-            navigate(`/upload-images/${res.data._id}`)
-          })
+    if(storeFront.storeName === ''||
+       storeFront.price === '' || 
+       storeFront.condition === ''|| 
+       storeFront.description === ''|| 
+       storeFront.category === ''){
+      alert('please enter appropriate field')
+    } else {
+      axios.post('http://localhost:8080/store-front/admin', storeFront, {headers})
+            .then((res) => {
+              setNewStore(res.data) 
+              navigate(`/upload-images/${res.data._id}`)
+            })
+    }
   }
 
-  // if(!storeFront){
-  //   console.log('loading')
-  // } else {
-  //   console.log(storeFront)
-  // }
+  
 
   return (
     <div className='item-detail-form-container'>
@@ -95,11 +99,16 @@ const ItemDetailForm = ({ username, token, id }) => {
           value={storeFront.description}/>
 
         <label className='label'>Category:</label>
-        <input className='input'
-          onChange={handleChange} 
+        {/* <label className='input'
           type='text' 
           id='category' 
-          value={storeFront.category}/>
+          >
+          </label> */}
+          <select id='category' onChange={handleChange} >
+            <option value='tshirt'>t-shirt</option>
+            <option value='bottom'>bottom</option>
+            <option value='top'>top</option>
+          </select>
         </div>
         <div id='item-form-button-container' >
           <button 
