@@ -31,7 +31,7 @@ const StoreFronts = ({ store }) => {
       {!imageUrl ? console.log('loading') : 
       <img 
       className='homepage image'
-      onClick={() => {navigate(`/${store._id}/${store.storeName}`)}}
+      onClick={() => {navigate(`/${store._id}`)}}
       alt={imageUrl[0].imageKey} 
       src={imageUrl[0].imageUrl}
       />}

@@ -27,7 +27,7 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signout' element={<Signout />} />
-        <Route path='/:storeid/:storename' element={<StoreFrontDetail />} />
+        <Route path='/:storeid/' element={<StoreFrontDetail />} />
         <Route path='/pay' element={<PaymentPage />} />
         {/* SECURED ROUTES */}
         <Route path='/:username/adminpage' element={<AdminPage />}>
