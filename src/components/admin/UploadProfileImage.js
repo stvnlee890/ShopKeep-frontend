@@ -14,6 +14,7 @@ const [imageUrl, setImageUrl] = useState('')
 
    
     console.log(imageUrl.imageUrl)
+    
     const handleChange = (event) => {
       const files = event.target.files[0]
       setUploadImages(files)
@@ -39,6 +40,7 @@ const [imageUrl, setImageUrl] = useState('')
         .catch((err) => console.log(err))
       }
     }
+
     const handleDelete = (event) => {
       event.preventDefault()
       const imageKey = event.target.id

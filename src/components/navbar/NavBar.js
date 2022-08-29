@@ -1,5 +1,5 @@
 import './nav.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const NavBar = () => {
@@ -23,6 +23,8 @@ console.log(isLoggedIn)
           <NavLink className='nav' id='shopkeep' to='/'><p>ShopKeep</p></NavLink>
         </div>
         <div className='user-feature'>
+          
+          <NavLink className='nav' id='profile' to={`favorite`}><p>Favorite</p></NavLink>
           <NavLink className='nav' id='profile' to={`${username}/adminpage`}><p>Profile</p></NavLink>
           <NavLink className='nav' id='signout' to='/signout'><p>Sign Out</p></NavLink>
       </div>

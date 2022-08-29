@@ -52,3 +52,7 @@
   font-size: 18px;
   width: 100%;
 }
+
+.favorite {
+  cursor: pointer;
+}

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const StoreFronts = ({ store }) => {
+  const username = window.localStorage.getItem('user')
   const [imageUrl, setImageUrl] = useState('')
   const navigate = useNavigate()
   // GET ALL STORE FRONTS
@@ -11,8 +12,12 @@ const StoreFronts = ({ store }) => {
     axios.get(`http://localhost:8080/images/${store._id}` )
       .then((res) => setImageUrl(res.data))
   },[])
-  console.log(imageUrl)
-console.log(store)
+
+  const handleClick = (event) => {
+    console.log(event.target.id)
+    axios.put(`http://localhost:8080/user/favorite/${username}`, {favorite: store._id})
+      .then((res) => console.log(res.data))
+  }
   if(!imageUrl){
     console.log('loading')
   }
@@ -27,6 +32,11 @@ console.log(store)
       src={imageUrl[0].imageUrl}
       />}
       <p className='homepage store-front price' >USD ${store.price}</p>
+      <p 
+      className='homepage store-front price favorite' 
+      onClick={handleClick}
+      id={store._id}
+      >Add to Favorite</p>
     </div>
   )
 }

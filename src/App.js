@@ -13,6 +13,7 @@ import Signout from './components/signup-login/Signout';
 import StoreFrontDetail from './components/StoreFronts/StoreFrontDetail';
 import PaymentPage from './components/paypage/PaymentPage';
 import UploadProfileImage from './components/admin/UploadProfileImage';
+import Favorite from './components/admin/Favorite';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/:username/adminpage' element={<AdminPage />}>
           <Route path='setstore' element={<SetStore />} />
           <Route path='view-admin-store' element={<AdminStoreFronts />} />
+          <Route path='favorite' element={<Favorite />} />
         </Route>
           <Route path='/profile-image/:userid' element={<UploadProfileImage />} />
           <Route path='/upload-images/:storeid' element={<UploadImages />} />

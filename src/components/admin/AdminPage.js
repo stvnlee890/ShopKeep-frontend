@@ -32,7 +32,10 @@ const AdminPage = () => {
         />
       </div>
       <div className='admin-page-button-container'>
-      {!user.isAdmin ? null:
+      {!user.isAdmin ? 
+      <nav>
+        <Link id='admin-store-button' to='favorite'><span>Favorite</span></Link>
+      </nav>: 
       <nav className='admin-page-button'>
         <Link id='admin-store-button' to='setstore'><span>Start Selling</span></Link>
         <Link id='admin-store-button' to={`view-admin-store`}><span>Store Front</span></Link>
