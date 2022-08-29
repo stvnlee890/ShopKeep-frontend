@@ -8,12 +8,15 @@ const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 const localStorageLogin = window.localStorage.getItem('isLoggedIn')
 const username = window.localStorage.getItem('user')
+const loginStatus = JSON.parse(localStorageLogin)
 
 useEffect(() => {
-  if(localStorageLogin === 'true'){
+  if(loginStatus){
     setIsLoggedIn(true)
+  }else {
+    setIsLoggedIn(false)
   }
-},[])
+},[localStorageLogin])
 
 const handleSignout = () => {
   setIsLoggedIn(false)
@@ -21,7 +24,7 @@ const handleSignout = () => {
 
 console.log(isLoggedIn)
 
-  if(isLoggedIn === true) {
+  if(isLoggedIn) {
     return (
       <div className='nav-container'>
         <div className='logo'>
@@ -37,13 +40,13 @@ console.log(isLoggedIn)
     )
   }  
   else{
-    return  (
-      <div className='nav-container' > 
+    return (
+      <div className='nav-container'> 
          <div className='logo'>
           <NavLink className='nav' id='shopkeep' to='/'><p>ShopKeep</p></NavLink>
         </div>
         <div className='user-feature'>
-         <NavLink className='nav' id='signup' to='/signup'><p>Sign Up</p></     NavLink>
+          <NavLink className='nav' id='signup' to='/signup'><p>Sign Up</p></NavLink>
           <NavLink className='nav' id='login' to='/login'><p>Login</p></NavLink>
         </div>
       </div>

@@ -5,19 +5,13 @@ import { useParams } from 'react-router-dom'
 const Favorite = () => {
 const { username } = useParams()
 const [storeid, setStoreid] = useState([])
-const [storeFront, setStoreFront] = useState([])
+const [image, setImage] = useState([])
 
-  // useEffect(() => {
-  //   axios.get(`http://localhost:8080/user/${username}`)
-  //     .then((res) => {
-  //       axios.get(`http://localhost:8080/images/favorite/`, {
-  //         params: {
-  //           storeid
-  //         }
-  //       })
-  //         .then((res) => console.log(res.data))
-  //     })
-  // },[])
+useEffect(() => {
+  axios.get(`http://localhost:8080/images/favorite/${username}` )
+    .then((res) => setImage(res.data))
+},[])
+console.log(image)
 
   
   return (
@@ -25,6 +19,10 @@ const [storeFront, setStoreFront] = useState([])
       <h3>
         favorite
       </h3>
+      {image.map((image) => (
+        !image ? <p>loading</p> : <img src={image.imageUrl} />
+      ))}
+       {/* {!image ? <p>loading</p> : <img src={image.imageUrl} />} */}
     </div>
   )
 }

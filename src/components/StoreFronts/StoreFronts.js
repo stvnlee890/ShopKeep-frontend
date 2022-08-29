@@ -7,6 +7,10 @@ const StoreFronts = ({ store }) => {
   const username = window.localStorage.getItem('user')
   const [imageUrl, setImageUrl] = useState('')
   const navigate = useNavigate()
+  const favoriteForm = {
+    username: username,
+    storeFront: '',
+  }
   // GET ALL STORE FRONTS
   useEffect(() => {
     axios.get(`http://localhost:8080/images/${store._id}` )
@@ -15,7 +19,7 @@ const StoreFronts = ({ store }) => {
 
   const handleClick = (event) => {
     console.log(event.target.id)
-    axios.put(`http://localhost:8080/user/favorite/${username}`, {favorite: store._id})
+    axios.post(`http://localhost:8080/favorite`, {username: username, storeFront: event.target.id, imageKey: imageUrl[0].imageKey})
       .then((res) => console.log(res.data))
   }
   if(!imageUrl){
