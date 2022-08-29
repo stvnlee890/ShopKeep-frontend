@@ -24,7 +24,7 @@ const handleDelete = (event) => {
   axios.delete(`http://localhost:8080/images/store-front/${imageKey}`)
     .then(() => {
       const newStoreFront = storeFront.filter(storeFront => storeFront._id !== imageKey)
-      console.log(newStoreFront)
+
       setStoreFront(newStoreFront)  
     })
     .catch((err) => console.log(err))

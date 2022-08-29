@@ -1,6 +1,7 @@
 import './nav.css'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Signout from '../signup-login/Signout'
 
 const NavBar = () => {
 const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -14,6 +15,10 @@ useEffect(() => {
   }
 },[])
 
+const handleSignout = () => {
+  setIsLoggedIn(false)
+}
+
 console.log(isLoggedIn)
 
   if(isLoggedIn === true) {
@@ -24,14 +29,14 @@ console.log(isLoggedIn)
         </div>
         <div className='user-feature'>
           
-          <NavLink className='nav' id='profile' to={`favorite`}><p>Favorite</p></NavLink>
           <NavLink className='nav' id='profile' to={`${username}/adminpage`}><p>Profile</p></NavLink>
-          <NavLink className='nav' id='signout' to='/signout'><p>Sign Out</p></NavLink>
+          <NavLink onClick={handleSignout} className='nav' id='signout' to='/signout'><p>Signout</p></NavLink>
+      
       </div>
       </div>
     )
   }  
-  else if(localStorageLogin === null){
+  else{
     return  (
       <div className='nav-container' > 
          <div className='logo'>

@@ -1,9 +1,8 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Signout = () => {
+const Signout = ({ signout }) => {
 
-  
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -15,7 +14,7 @@ const Signout = () => {
 
   return (
   <div>
-    <h1>Sign Out</h1>
+    <button onClick={signout}>Sign Out</button>
   </div>
   )
 }

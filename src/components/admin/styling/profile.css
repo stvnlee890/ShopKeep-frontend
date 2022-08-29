@@ -28,14 +28,22 @@
 .admin-page-button {
   
 }
-#admin-store-button {
+.admin-store-button {
   font-family:'Poppins', sans-serif;
   text-decoration: none;
-  color: white;
+  color: black;
   margin: 10px;
   padding: 10px;
-  border: 1px solid;
+  /* border: 1px solid;
   border-radius: 5px;
-  background: #eb1a1a;
+  background: #eb1a1a; */
+}
+.bold {
+  font-family:'Poppins', sans-serif;
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+  padding: 10px;
+  font-weight: bold;
 }
 

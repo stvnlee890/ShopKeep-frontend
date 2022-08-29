@@ -17,7 +17,7 @@ const SetStore = () => {
     })
       .then((res) => setAdmin(res.data))
   }, [])
-console.log(admin)
+
 
 
   return (

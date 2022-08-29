@@ -51,7 +51,7 @@ const UploadImages = () => {
     axios.delete(`http://localhost:8080/images/${imageKey}`)
       .then(() => {
         const newImageUrl = imageUrl.filter(image => image.imageKey !== imageKey)
-        console.log(newImageUrl)
+    
         setImageUrl(newImageUrl)  
       })
       .catch((err) => console.log(err))

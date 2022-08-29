@@ -13,7 +13,7 @@ import Signout from './components/signup-login/Signout';
 import StoreFrontDetail from './components/StoreFronts/StoreFrontDetail';
 import PaymentPage from './components/paypage/PaymentPage';
 import UploadProfileImage from './components/admin/UploadProfileImage';
-import Favorite from './components/admin/Favorite';
+import Favorite from './components/admin/favorite/Favorite';
 
 
 function App() {
