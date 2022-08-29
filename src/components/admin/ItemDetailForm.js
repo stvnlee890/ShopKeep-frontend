@@ -38,7 +38,7 @@ const ItemDetailForm = ({ username, token, id }) => {
        storeFront.category === ''){
       alert('please enter appropriate field')
     } else {
-      axios.post('http://localhost:8080/store-front/admin', storeFront, {headers})
+      axios.post('https://git.heroku.com/shopkeepapp.git/store-front/admin', storeFront, {headers})
             .then((res) => {
               setNewStore(res.data) 
               navigate(`/upload-images/${res.data._id}`)

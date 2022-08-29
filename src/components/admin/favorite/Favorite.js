@@ -8,7 +8,7 @@ const [image, setImage] = useState([])
 const navigate = useNavigate()
 
 useEffect(() => {
-  axios.get(`http://localhost:8080/images/favorite/${username}` )
+  axios.get(`https://git.heroku.com/shopkeepapp.git/images/favorite/${username}` )
     .then((res) => setImage(res.data))
 },[])
 console.log(image)
@@ -19,7 +19,7 @@ const handleClick = (event) => {
 const handleDelete = (event) => {
     event.preventDefault()
     console.log(event.target.id)
-    axios.delete(`http://localhost:8080/favorite/${event.target.id}`)
+    axios.delete(`https://git.heroku.com/shopkeepapp.git/favorite/${event.target.id}`)
       .then(() => {
         const newImage = image.filter(image => image._id !== event.target.id)
         setImage(newImage)  

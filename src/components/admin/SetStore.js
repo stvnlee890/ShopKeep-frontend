@@ -9,7 +9,7 @@ const SetStore = () => {
 
   const token = window.localStorage.getItem('token')
   useEffect(() => {
-    axios.get(`http://localhost:8080/user/${username}`, {
+    axios.get(`https://git.heroku.com/shopkeepapp.git/user/${username}`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`

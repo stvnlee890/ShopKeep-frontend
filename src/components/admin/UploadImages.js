@@ -28,7 +28,7 @@ const UploadImages = () => {
       alert('please upload an image')
     } else {
       event.preventDefault()
-      axios.post(`http://localhost:8080/images`, formData, {
+      axios.post(`https://git.heroku.com/shopkeepapp.git/images`, formData, {
         headers: {'Content-Type': 'multipart/form-data'}
       })
       .then(() => {
@@ -41,7 +41,7 @@ const UploadImages = () => {
   console.log(upload)
   // GET IMAGES
   useEffect(() => {
-    axios.get(`http://localhost:8080/images/${storeid}` )
+    axios.get(`https://git.heroku.com/shopkeepapp.git/images/${storeid}` )
     .then((res) => {
       setImageUrl(res.data)
       setUpload(false)
@@ -52,7 +52,7 @@ const UploadImages = () => {
   const handleDelete = (event) => {
     event.preventDefault()
     const imageKey = event.target.id
-    axios.delete(`http://localhost:8080/images/${imageKey}`)
+    axios.delete(`https://git.heroku.com/shopkeepapp.git/images/${imageKey}`)
       .then(() => {
         const newImageUrl = imageUrl.filter(image => image.imageKey !== imageKey)
     

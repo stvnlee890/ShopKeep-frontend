@@ -5,7 +5,7 @@ const ViewAdminStore = ({ storeName, id, price, handleDelete }) => {
   const [imageUrl, setImageUrl] = useState()
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/images/${id}` )
+    axios.get(`https://git.heroku.com/shopkeepapp.git/images/${id}` )
       .then((res) => setImageUrl(res.data))
   },[])
 

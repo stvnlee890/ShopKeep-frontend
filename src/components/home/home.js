@@ -7,7 +7,7 @@ const Home = () => {
 const [store, setStore] = useState('')
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/store-front/`)
+    axios.get(`https://git.heroku.com/shopkeepapp.git/store-front/`)
       .then((res) => setStore(res.data))
   }, [])
 

@@ -11,7 +11,7 @@ const [storeDetails, setStoreDetails] = useState()
 const { storeid } = useParams()
 
 useEffect(() => {
-  axios.get(`http://localhost:8080/store-front/admin/${storeid}`)
+  axios.get(`https://git.heroku.com/shopkeepapp.git/store-front/admin/${storeid}`)
   .then((res) => setStoreDetails(res.data))
 },[])
 
