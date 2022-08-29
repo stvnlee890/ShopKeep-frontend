@@ -18,9 +18,14 @@ if(!setStore){
 
 if(store){
   return (
-    <div className='homepage'>
-      <img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Plain-Wallpaper-HD.png" />
+    <div className='homepage-container'>
 
+   
+    <div id='homepage-intro-image'>
+      <span id='welcome-text'>BUY.SELL</span>
+    </div>
+
+    <div className='homepage'>
       <p className='header' id='header'>See who's selling what</p>
       <div className='homepage store-fronts'>
       {store.map((store) => (
@@ -30,6 +35,7 @@ if(store){
         />
       ))}
       </div>
+    </div>
     </div>
   )
 

@@ -34,7 +34,8 @@ const Login = () => {
           window.localStorage.setItem('token', data.token)
           window.localStorage.setItem('user', data.user.username)
           window.localStorage.setItem('isLoggedIn', true)
-          navigate(`/${data.user.username}/adminpage`)
+          // navigate(`/${data.user.username}/adminpage`)
+          navigate('/')
         }else {
           window.localStorage.setItem('user', data.user.username)
           window.localStorage.setItem('isLoggedIn', true)
