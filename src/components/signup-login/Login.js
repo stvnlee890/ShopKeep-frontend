@@ -1,3 +1,4 @@
+import './styling/loginForm.css'
 import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -46,13 +47,36 @@ const Login = () => {
   // provider 
 
   return (
-    <div>
-      <h1>Login Page</h1>
+    <div className='login-form-container'>
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <input onChange={handleChange} id='username' value={userLogin.username} placeholder="username"/>
-        <input onChange={handleChange} id='email' value={userLogin.email} placeholder="email"/>
-        <input onChange={handleChange} id='password' value={userLogin.password} placeholder="password" type="password"/>
-        <button type="submit">submit</button>
+
+        <div className='user-input-form'>
+          <label className='label'>Username:</label>
+          <input className='input'
+             onChange={handleChange} 
+             id='username' 
+             value={userLogin.username} 
+             placeholder="username"/>
+
+          <label className='label'>Email:</label>
+          <input className='input'
+            onChange={handleChange} 
+            id='email' value={userLogin.email} 
+            placeholder="email"/>
+
+          <label className='label'>Password:</label>
+          <input className='input'
+            onChange={handleChange} 
+            id='password' 
+            value={userLogin.password} 
+            placeholder="password"
+            type="password"/>
+        </div>
+
+        <button 
+         id='item-form-button'
+         type="submit">submit</button>
       </form>
     </div>
   )

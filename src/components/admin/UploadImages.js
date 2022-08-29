@@ -38,13 +38,16 @@ const UploadImages = () => {
       .catch((err) => console.log(err))
     }
   }
-  
+  console.log(upload)
   // GET IMAGES
   useEffect(() => {
     axios.get(`http://localhost:8080/images/${storeid}` )
-    .then((res) => setImageUrl(res.data))
+    .then((res) => {
+      setImageUrl(res.data)
+      setUpload(false)
+    })
   },[uploadImages])
-  
+  console.log(upload)
   // DELETES IMAGE
   const handleDelete = (event) => {
     event.preventDefault()
@@ -63,6 +66,7 @@ const UploadImages = () => {
     navigate(`/${username}/adminpage`)
   }
 
+  
   return (
     <div>
       <h1>Upload Images</h1>

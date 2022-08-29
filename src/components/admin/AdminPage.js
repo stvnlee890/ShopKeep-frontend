@@ -16,9 +16,7 @@ const AdminPage = () => {
       .then((res) => setUser(res.data))
   },[])
 
-  const toggleClass = () => {
-    setIsActive(!isActive)
-  }
+
 
   if(!user){
     return (
@@ -41,11 +39,7 @@ const AdminPage = () => {
         <Link id='admin-store-button' to='favorite'><span>Favorite</span></Link>
       </nav>: 
       <nav className='admin-page-button'>
-        <Link 
-        onClick={toggleClass} 
-        className={isActive ? 'bold' : 'admin-store-button'} 
-        id='start-selling' 
-        to='setstore'><span>Start Selling</span></Link>
+        <Link className='admin-store-button' id='start-selling' to='setstore'><span>Start Selling</span></Link>
         <Link className='admin-store-button' id='store-front' to={`view-admin-store`}><span>Store Front</span></Link>
         <Link className='admin-store-button' id='favorite' to='favorite'><span>Favorite</span></Link>
       </nav>

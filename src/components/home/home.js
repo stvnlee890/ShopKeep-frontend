@@ -19,6 +19,8 @@ if(!setStore){
 if(store){
   return (
     <div className='homepage'>
+      <img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Plain-Wallpaper-HD.png" />
+
       <p className='header' id='header'>See who's selling what</p>
       <div className='homepage store-fronts'>
       {store.map((store) => (
