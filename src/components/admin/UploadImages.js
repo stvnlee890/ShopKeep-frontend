@@ -8,7 +8,7 @@ const UploadImages = () => {
   const { storeid } = useParams()
   const [uploadImages, setUploadImages] = useState()
   const [imageUrl, setImageUrl] = useState('')
-
+  const [upload, setUpload] = useState(false)
   const navigate = useNavigate()
   const username = window.localStorage.getItem('user')
 
@@ -32,6 +32,7 @@ const UploadImages = () => {
         headers: {'Content-Type': 'multipart/form-data'}
       })
       .then(() => {
+        setUpload(true)
         setUploadImages('')
       })
       .catch((err) => console.log(err))
