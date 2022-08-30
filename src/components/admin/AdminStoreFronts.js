@@ -24,12 +24,11 @@ const handleDelete = (event) => {
   axios.delete(`https://shopkeepapp.herokuapp.com/images/store-front/${imageKey}`)
     .then(() => {
       const newStoreFront = storeFront.filter(storeFront => storeFront._id !== imageKey)
-
       setStoreFront(newStoreFront)  
     })
     .catch((err) => console.log(err))
 }
-
+console.log(storeFront)
   if(!storeFront){
     return(
       <p>loading</p>

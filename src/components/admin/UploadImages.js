@@ -68,12 +68,12 @@ const UploadImages = () => {
 
   
   return (
-    <div>
-      <h1>Upload Images</h1>
+    <div className='upload-images-container'>
+      <p id='upload-image-text' >Upload your images</p>
       <form onSubmit={handleSubmit}>
 
         <div className='upload-images-input-container'>
-          <label htmlFor='image' className='upload-images-label'>Upload Images</label>
+          <label htmlFor='image' className='upload-images-label'>Select Images</label>
           <input className='upload-images-input'
             onChange={handleChange}
             name='file'
@@ -82,7 +82,9 @@ const UploadImages = () => {
             accept='image/*'
           >
           </input>
-        <button type='submit'>Submit</button>
+          <div id='upload-image-button-container'>
+            <button id='upload-image-button'type='submit'>Submit</button>
+          </div>
         </div>
 
       </form>

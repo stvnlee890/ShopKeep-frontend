@@ -1,5 +1,8 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+
 
 const ViewAdminStore = ({ storeName, id, price, handleDelete }) => {
   const [imageUrl, setImageUrl] = useState()
@@ -19,11 +22,13 @@ const ViewAdminStore = ({ storeName, id, price, handleDelete }) => {
         src={imageUrl[0].imageUrl}/>}
       <p>{`$${price}`}</p>
       <div id='admin-store-delete-button-container'>
+      
         <button 
           onClick={handleDelete} 
           className='admin-store-delete-button'
           id={id}>delete
         </button>
+
       </div>
     </div>
     </>

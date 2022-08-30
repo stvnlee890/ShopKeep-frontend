@@ -1,10 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
 
-
+.upload-images-container {
+  margin-top: 100px;
+  max-width: 100%;
+}
+ #upload-image-text {
+  font-family:'Poppins', sans-serif;
+  text-align: center;
+  margin-bottom: 80px;
+ }
 .upload-images-input-container {
   display: flex;
   justify-content: center;
 }
+
+
 
 input[type=file]::-webkit-file-upload-button {
   visibility: hidden;
@@ -40,4 +50,10 @@ input[type=file]::-webkit-file-upload-button {
   font-size: 18px;
   width: 100%;
   padding: none;
+}
+#upload-image-button {
+  font-family: 'Poppins', sans-serif;
+  background: none;
+  border: none;
+  font-size: 20px;
 }

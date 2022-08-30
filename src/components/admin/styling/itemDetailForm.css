@@ -51,3 +51,12 @@
   cursor: pointer;
   /* color: #7a7a7a; */
 }
+#category {
+  font-family: 'Poppins', sans-serif;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #dedede;
+  padding-top: 35px;
+  font-size: 14px;
+}

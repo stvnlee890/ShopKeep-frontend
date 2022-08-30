@@ -103,7 +103,7 @@ const ItemDetailForm = ({ username, token, id }) => {
           >
           </label> */}
           <select id='category' onChange={handleChange}>
-            <option>Select a Category</option>
+            <option id='category-drop-down'>Select a Category</option>
             <option value='tshirt'>t-shirt</option>
             <option value='bottom'>bottom</option>
             <option value='top'>top</option>
