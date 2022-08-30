@@ -5,6 +5,7 @@ import { Link, Outlet, useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import ProfilePic from './ProfilePic';
 
+
 const AdminPage = () => {
   const { username } = useParams()
   const navigate = useNavigate()
@@ -36,6 +37,7 @@ const AdminPage = () => {
       <div className='admin-page-button-container'>
       {!user.isAdmin ? 
       <nav>
+  
         <Link id='admin-store-button' to='favorite'><span>Favorite</span></Link>
       </nav>: 
       <nav className='admin-page-button'>

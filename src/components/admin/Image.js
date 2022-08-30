@@ -11,7 +11,7 @@ const Image = ({ imageUrl, handleDelete }) => {
         <button className='image-button'
         onClick={handleDelete} 
         id={imageUrl.imageKey}>
-          delete
+          remove
         </button>
       </div>
     </div>

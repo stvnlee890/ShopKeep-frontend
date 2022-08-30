@@ -3,7 +3,9 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Image from './Image'
 import { useParams, useNavigate } from 'react-router-dom'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImages } from "@fortawesome/free-regular-svg-icons";
+ 
 const UploadImages = () => {
   const { storeid } = useParams()
   const [uploadImages, setUploadImages] = useState()
@@ -79,7 +81,8 @@ console.log(imageUrl)
       <form onSubmit={handleSubmit}>
 
         <div className='upload-images-input-container'>
-          <label htmlFor='image' className='upload-images-label'>Select Images</label>
+  
+          <label htmlFor='image' className='upload-images-label'><FontAwesomeIcon id='image-icon' icon={faImages} /></label>
           <input className='upload-images-input'
             onChange={handleChange}
             name='file'
@@ -103,9 +106,9 @@ console.log(imageUrl)
           handleDelete={handleDelete} />
       ))}
     </div>
-    
-     <button id='finished-button' type='submit' onClick={handleClick}>Finished </button> 
-      
+    <div className='finished-button-container'>
+      <button id='finished-button' type='submit' onClick={handleClick}>Finished </button> 
+    </div>
     </div>
   )
 }

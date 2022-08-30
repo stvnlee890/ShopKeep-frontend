@@ -56,3 +56,7 @@
 .favorite {
   cursor: pointer;
 }
+ #store-front-details {
+  display: flex;
+  justify-content: space-between;
+ }

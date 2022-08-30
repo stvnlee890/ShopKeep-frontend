@@ -2,6 +2,8 @@ import '../home/home.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const StoreFronts = ({ store }) => {
   const username = window.localStorage.getItem('user')
@@ -35,12 +37,15 @@ const StoreFronts = ({ store }) => {
       alt={imageUrl[0].imageKey} 
       src={imageUrl[0].imageUrl}
       />}
-      <p className='homepage store-front price' >USD ${store.price}</p>
-      <p 
-      className='homepage store-front price favorite' 
-      onClick={handleClick}
-      id={store._id}
-      >Add to Favorite</p>
+      <div id='store-front-details'>
+
+        <p className='homepage store-front price' >USD ${store.price}</p>
+        <FontAwesomeIcon icon={faHeart} 
+          className='homepage store-front price favorite'  
+          id={store._id} 
+          onClick={handleClick}/>
+      </div>
+      
     </div>
   )
 }
