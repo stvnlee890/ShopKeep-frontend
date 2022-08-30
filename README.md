@@ -1,3 +1,28 @@
+# ShopKeep
+A simple e-commerce website where users can upload images and set up their own store-fronts to begin selling!
+
+# Netlify
+https://shopkepp.netlify.app
+
+# Preview 
+<img width="885" alt="Screen Shot 2022-08-30 at 2 43 57 AM" src="https://user-images.githubusercontent.com/106281820/187406289-2ff2b271-5db5-4823-8409-271b3a7ff8c5.png">
+<img width="677" alt="Screen Shot 2022-08-30 at 2 41 17 AM" src="https://user-images.githubusercontent.com/106281820/187406337-5120f565-ec25-4602-bedc-babed9a2f01a.png">
+<img width="676" alt="Screen Shot 2022-08-30 at 2 41 37 AM" src="https://user-images.githubusercontent.com/106281820/187406363-4ea028b2-e345-4d9d-ad1d-be6ff1447777.png">
+<img width="846" alt="Screen Shot 2022-08-30 at 2 42 37 AM" src="https://user-images.githubusercontent.com/106281820/187406374-82b6e904-f7b1-4880-b212-b397331760a1.png">
+
+# Tech Stack
+- MongoDB, Express, Node.js, React, AWS S3 
+
+# User Story
+- Click on seller's store-front and view detailed images of their items
+- Add the store-front to my favorites so I can view it again, or purchase it
+- Create my own store-front as a seller
+- View the site on any device
+
+# Entity Relationship Diagram
+<img width="842" alt="ERD" src="https://user-images.githubusercontent.com/106281820/187407926-d7d376e4-d1f7-4579-a406-4e0f4e0517d0.png">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
