@@ -57,3 +57,15 @@ input[type=file]::-webkit-file-upload-button {
   border: none;
   font-size: 20px;
 }
+
+#finished-button {
+  font-family: 'Poppins', sans-serif;
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+
+#finished-button:hover {
+  font-weight: bold
+}

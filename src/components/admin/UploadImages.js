@@ -63,13 +63,19 @@ const UploadImages = () => {
 
   // NAVIGATES USER TO ADMIN PAGE AFTER FINISHING THEIR EDIT
   const handleClick = () => {
-    navigate(`/${username}/adminpage`)
+    if(imageUrl.length === 0){
+      alert('please upload images')
+    } else {
+      navigate(`/${username}/adminpage`)
+    }
   }
+console.log(imageUrl)
 
+  
   
   return (
     <div className='upload-images-container'>
-      <p id='upload-image-text' >Upload your images</p>
+      <p id='upload-image-text'>Upload your images</p>
       <form onSubmit={handleSubmit}>
 
         <div className='upload-images-input-container'>
@@ -97,11 +103,9 @@ const UploadImages = () => {
           handleDelete={handleDelete} />
       ))}
     </div>
-      <button 
-      type='submit' 
-      onClick={handleClick}>
-        Finished
-      </button>
+    
+     <button id='finished-button' type='submit' onClick={handleClick}>Finished </button> 
+      
     </div>
   )
 }

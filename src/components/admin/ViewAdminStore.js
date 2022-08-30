@@ -26,7 +26,7 @@ const ViewAdminStore = ({ storeName, id, price, handleDelete }) => {
         <button 
           onClick={handleDelete} 
           className='admin-store-delete-button'
-          id={id}>delete
+          id={id}>remove
         </button>
 
       </div>
