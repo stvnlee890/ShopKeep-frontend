@@ -6,18 +6,20 @@ const Image = ({ imageUrl, handleDelete }) => {
 
   return (
     <div className='image-component'>
-      <img id='image-component-images'
-      alt={imageUrl.imageName} 
-      src={imageUrl.imageUrl} />
-      <div id='image-component-button' >
-        {/* <button className='image-button'
-        onClick={handleDelete} 
-        id={imageUrl.imageKey}>
-          remove
-        </button> */}
-        <FontAwesomeIcon icon={faTrashCan} className='image-button' onClick={handleDelete} 
-        id={imageUrl.imageKey}/>
+      <div className='image-container'>
+        <img id='image-component-images'
+        alt={imageUrl.imageName} 
+        src={imageUrl.imageUrl} />
+    
+          {/* <button className='image-button'
+          onClick={handleDelete} 
+          id={imageUrl.imageKey}>
+            remove
+          </button> */}
+          <FontAwesomeIcon icon={faTrashCan} className='image-button' onClick={handleDelete} 
+          id={imageUrl.imageKey}/>
       </div>
+ 
     </div>
   )
 }

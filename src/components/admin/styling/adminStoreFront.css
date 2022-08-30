@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
 
 .admin-store-container {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-  font-family:'Poppins', sans-serif;
-  margin-top: 20px;
-  max-width: 100%; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
