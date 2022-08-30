@@ -30,7 +30,7 @@ const ViewAdminStore = ({ storeName, id, price, handleDelete }) => {
         <button 
           onClick={handleDelete} 
           className='admin-store-delete-button'
-          id={id}> <FontAwesomeIcon icon={faTrashCan} />
+          id={id}><FontAwesomeIcon icon={faTrashCan} />
         </button>
       </div>
 
