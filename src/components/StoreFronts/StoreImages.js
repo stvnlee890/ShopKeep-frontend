@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-
 const StoreImages = () => {
   const [imageUrl, setImageUrl] = useState('')
   const { storeid } = useParams()

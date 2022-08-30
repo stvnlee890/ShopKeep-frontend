@@ -15,7 +15,7 @@ useEffect(() => {
   axios.get(`https://shopkeepapp.herokuapp.com/images/favorite/${username}` )
     .then((res) => setImage(res.data))
 },[])
-console.log(image)
+
 
 const handleClick = (event) => {
   navigate(`/${event.target.id}`)

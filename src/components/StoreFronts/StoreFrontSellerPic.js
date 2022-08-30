@@ -1,13 +1,11 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+
 
 const StoreFrontSellerPic = ({ user }) => {
   const [profileImage, setProfileImage] = useState('')
   console.log(profileImage)
 
-
-  
   useEffect(() => {
     axios.get(`https://shopkeepapp.herokuapp.com/images/profile-image/${user}` )
     .then((res) => setProfileImage(res.data))

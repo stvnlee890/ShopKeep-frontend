@@ -11,16 +11,12 @@ const [imageUrl, setImageUrl] = useState('')
   const formData = new FormData()
     formData.append('image', uploadImages)
     formData.append('userProfile', userid)
-
-   
-    console.log(imageUrl.imageUrl)
-    
+  
     const handleChange = (event) => {
       const files = event.target.files[0]
       setUploadImages(files)
     }
-    console.log(imageUrl)
-
+  
     useEffect(() => {
         axios.get(`https://git.heroku.com/shopkeepapp.git/images/profile-image/${userid}` )
         .then((res) => setImageUrl(res.data))
@@ -48,7 +44,6 @@ const [imageUrl, setImageUrl] = useState('')
       axios.delete(`https://shopkeepapp.herokuapp.com/images/${imageKey}`)
         .then(() => {
           const newImageUrl = imageUrl.filter(image => image.imageKey !== imageKey)
-          console.log(newImageUrl)
           setImageUrl(newImageUrl)  
         })
         .catch((err) => console.log(err))

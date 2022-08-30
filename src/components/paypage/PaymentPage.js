@@ -20,8 +20,6 @@ const PaymentPage = () => {
   const handleChange = (event) => {
     event.preventDefault()
     setUser({ ...user, [event.target.id]: event.target.value })
-    console.log(event.target.id)
-    console.log(event.target.value)
   }
 
   const handleSubmit = (event) => {

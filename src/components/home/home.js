@@ -11,7 +11,6 @@ const [store, setStore] = useState('')
       .then((res) => setStore(res.data))
   }, [])
 
-console.log(store)
 if(!setStore){
   console.log('waiting')
 }

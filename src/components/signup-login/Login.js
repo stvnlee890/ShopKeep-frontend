@@ -15,14 +15,11 @@ const Login = () => {
 
   const [userLogin, setUserLogin] = useState(initialFormState)
   const [token, setToken] = useState()
-  // const [isLoggedIn, setIsLoggedIn] = useState(false)
-
 
   const handleChange = (event) => {
     event.preventDefault()
     setUserLogin({ ...userLogin, [event.target.id]: event.target.value })
   }
-  // set to local storage, isLoggedIn = true, username, token
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -42,7 +39,6 @@ const Login = () => {
           navigate('/')
         }
       })
-      console.log(token)
   }
 
   // provider 

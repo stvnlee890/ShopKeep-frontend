@@ -1,16 +1,15 @@
 // import '../../App.css';
 import './styling/profile.css'
 import axios from 'axios'
-import { Link, Outlet, useParams, useNavigate } from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import ProfilePic from './ProfilePic';
 
 
 const AdminPage = () => {
   const { username } = useParams()
-  const navigate = useNavigate()
   const [user, setUser] = useState()
-  const [isActive, setIsActive] = useState(false)
+  
 
   useEffect(() => {
     axios.get(`https://shopkeepapp.herokuapp.com/user/${username}`)

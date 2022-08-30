@@ -1,6 +1,6 @@
 import './styling/loginForm.css'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
@@ -20,8 +20,6 @@ const Signup = () => {
   const handleChange = (event) => {
     event.preventDefault()
     setUser({ ...user, [event.target.id]: event.target.value })
-    console.log(event.target.id)
-    console.log(event.target.value)
   }
 
   const handleSubmit = (event) => {
