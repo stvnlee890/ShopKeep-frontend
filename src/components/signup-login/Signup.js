@@ -35,7 +35,7 @@ const Signup = () => {
     <div className='signup-form-container'>
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
-        <div className='user-input-signout-form'>
+        <div className='user-input-signup-form'>
           <label className='label'>Username:</label>
           <input className='input' onChange={handleChange} id='username' value={user.username} placeholder="username"/>
 

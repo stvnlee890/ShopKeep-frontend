@@ -15,7 +15,7 @@
   display: grid;
   grid-template-columns: .5fr 1fr;
 }
-.user-input-signout-form {
+.user-input-signup-form {
   margin-left: 300px;
   margin-right: 200px;
   display: grid;
@@ -65,3 +65,16 @@
   cursor: pointer;
   /* color: #7a7a7a; */
 }
+
+@media (max-width: 800px) {
+  .user-input-form {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  } 
+@media (max-width: 800px) {
+  .user-input-signup-form {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  } 
