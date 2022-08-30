@@ -26,9 +26,13 @@ if(store){
         <p id="welcome-subtitle">Buy and Sell from our community</p>
       </div>
       <div id='homepage-img-container'>
-        <img id='homepage-img'
+        <img 
+        className='hide hide1'
+        id='homepage-img'
         src='https://media.karousell.com/media/photos/products/2018/10/03/bnip_instocks_kodak_film_vintage_tshirt_1538548342_04260a66_progressive.jpg' />
-        <img id='vogue-img'
+        <img 
+        className='hide hide2'
+        id='vogue-img'
         src='https://assets.vogue.com/photos/5891688b23f9887c0e0e0dde/master/w_1600%2Cc_limit/3-fresh-dressed-film-still.jpg'/>
       </div>
     </div>
