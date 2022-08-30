@@ -45,6 +45,10 @@ if(!storeDetails){
           {/* </div> */}
           </p>
           <p className='item-details'>
+            <span className='form-label'>Size:</span> 
+            <span className='description'>{storeDetails.size}</span>
+          </p>
+          <p className='item-details'>
             <span className='form-label'>Color:</span> 
             <span className='description'>{storeDetails.color}</span>
           </p>
