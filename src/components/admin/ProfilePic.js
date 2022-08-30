@@ -1,7 +1,7 @@
 import './styling/profile.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const ProfilePic = ({ userid, userFirstName, userEmail }) => {
   const [profileImage, setProfileImage] = useState('')

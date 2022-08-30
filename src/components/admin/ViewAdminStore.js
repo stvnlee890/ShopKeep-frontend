@@ -22,16 +22,16 @@ const ViewAdminStore = ({ storeName, id, price, handleDelete }) => {
       <div id='view-store-details'>
         <p id='view-store-price'>{`$${price}`}</p>
         <div id='admin-store-delete-button-container'>
-          {/* <FontAwesomeIcon icon={faTrashCan} 
+          <FontAwesomeIcon icon={faTrashCan} 
             className='admin-store-delete-button'
             id={id} 
             onClick={handleDelete} 
-            /> */}
-        <button 
+            />
+        {/* <button 
           onClick={handleDelete} 
           className='admin-store-delete-button'
           id={id}><FontAwesomeIcon icon={faTrashCan} />
-        </button>
+        </button> */}
       </div>
 
       </div>

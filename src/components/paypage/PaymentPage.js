@@ -1,6 +1,6 @@
 import '../signup-login/styling/loginForm.css'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
+
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const PaymentPage = () => {
@@ -25,10 +25,7 @@ const PaymentPage = () => {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    axios.post(url, user)
-      .then((res) => console.log(res.data))
-      .then(() => navigate('/login'))
+    navigate('/')
   }
   
   return (
