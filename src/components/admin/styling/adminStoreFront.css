@@ -13,13 +13,35 @@
 }
 
 .admin-store-delete-button {
+  border: none;
+  background: transparent;
+  margin-top: 20px;
   font-size: 18px;
   cursor: pointer;
   font-family:'Poppins', sans-serif;
-  background: none;
-  border: none;
-  color: red;
-  font-size: 14px;
   width: 100%;
 }
+#view-store-details {
+  display: flex;
+  justify-content: space-between;
+}
+#view-store-details {
+  margin-left: 25px;
+  margin-right: 25px;
+}
 
+.favorite-image {
+  margin-top: 80px;
+}
+
+.favorite-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.favorite-image-container {
+  display: grid;
+}
+.favorite-delete-button {
+  margin-top: 20px;
+  justify-content: end;
+}

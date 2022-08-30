@@ -1,4 +1,4 @@
-import '../home/home.css'
+import './styling/store-front.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
@@ -17,10 +17,12 @@ const StoreImages = () => {
     <div className='store-front-details-container'>
       {!imageUrl ? console.log('loading') :
       imageUrl.map((images) => (
-        <img id='store-front-details-images'
-        key={images.imageKey} 
-        alt={images.imageKey} 
-        src={images.imageUrl} />
+        <div id='store-front-details-images'>
+          <img id='store-front-images'
+          key={images.imageKey} 
+          alt={images.imageKey} 
+          src={images.imageUrl} />
+        </div>
       ))
       }
     </div>

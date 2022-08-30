@@ -18,9 +18,17 @@
   /* border: 1px solid red; */
   max-width: 50%;
 }
+.store-front-details-container {
+  max-width: 100%;
+}
 #store-front-details-images {
-  width: 500px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5%;
+}
+#store-front-images {
+  width: 100%;
+  height: 100%;
 }
 .seller-details {
   max-width: 50%;
@@ -33,7 +41,12 @@
   margin-top: 20px;
 }
 .description {
-  text-align: end
+  text-align: end;
+  font-size: 14px;
+}
+.form-label {
+  font-size: 14px;
+  font-weight: bold;
 }
 .seller-details-profile {
   text-align: center;
@@ -60,3 +73,47 @@
   display: flex;
   justify-content: space-between;
  }
+
+ @media (max-width: 1050px) {
+  #store-front-details-images {
+    width: 400px;
+    height: 500px;
+  }
+  .seller-details {
+    max-width: 40%
+  }
+ }
+
+
+ @media (max-width: 750px) {
+  .store-front-detail {
+    display: grid;
+    grid-template-rows: 1/ 2;
+    justify-content: center;
+    place-items: center;
+
+  }
+    
+  .seller-details {
+    max-width: 100%;
+    grid-row: 1;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+
+  .store-front-details-container {
+    max-width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  #store-front-details-images {
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+  }
+  #store-front-images {
+    object-fit: cover;
+  }
+  
+ }
+

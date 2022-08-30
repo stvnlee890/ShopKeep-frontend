@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from './Image'
 import { useParams, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faImages } from "@fortawesome/free-regular-svg-icons";
+import { faImage } from "@fortawesome/free-regular-svg-icons";
  
 const UploadImages = () => {
   const { storeid } = useParams()
@@ -34,7 +34,6 @@ const UploadImages = () => {
         headers: {'Content-Type': 'multipart/form-data'}
       })
       .then(() => {
-        setUpload(true)
         setUploadImages('')
       })
       .catch((err) => console.log(err))
@@ -46,7 +45,6 @@ const UploadImages = () => {
     axios.get(`https://shopkeepapp.herokuapp.com/images/${storeid}` )
     .then((res) => {
       setImageUrl(res.data)
-      setUpload(false)
     })
   },[uploadImages])
   console.log(upload)
@@ -73,16 +71,25 @@ const UploadImages = () => {
   }
 console.log(imageUrl)
 
+const changeStateTrue = () => {
+  setUpload(true)
+}
+const changeStateFalse = () => {
+  setUpload(false)
+}
+
   
   
   return (
     <div className='upload-images-container'>
-      <p id='upload-image-text'>Upload your images</p>
+      <h2 id='upload-image-text'>Upload your images</h2>
+      <p className='steps'>Step 2 of 2</p>
+      
       <form onSubmit={handleSubmit}>
 
         <div className='upload-images-input-container'>
   
-          <label htmlFor='image' className='upload-images-label'><FontAwesomeIcon id='image-icon' icon={faImages} /></label>
+          <label onClick={changeStateTrue} htmlFor='image' className='upload-images-label'><FontAwesomeIcon id='image-icon' icon={faImage} /></label>
           <input className='upload-images-input'
             onChange={handleChange}
             name='file'
@@ -92,7 +99,7 @@ console.log(imageUrl)
           >
           </input>
           <div id='upload-image-button-container'>
-            <button id='upload-image-button'type='submit'>Submit</button>
+            <button onClick={changeStateFalse} id='upload-image-button'type='submit'>Submit</button>
           </div>
         </div>
 

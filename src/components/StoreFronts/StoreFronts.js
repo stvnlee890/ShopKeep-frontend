@@ -38,7 +38,6 @@ const StoreFronts = ({ store }) => {
       src={imageUrl[0].imageUrl}
       />}
       <div id='store-front-details'>
-
         <p className='homepage store-front price' >USD ${store.price}</p>
         <FontAwesomeIcon icon={faHeart} 
           className='homepage store-front price favorite'  

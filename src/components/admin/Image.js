@@ -1,4 +1,6 @@
 import './styling/uploadImages.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 const Image = ({ imageUrl, handleDelete }) => {
 
@@ -8,11 +10,13 @@ const Image = ({ imageUrl, handleDelete }) => {
       alt={imageUrl.imageName} 
       src={imageUrl.imageUrl} />
       <div id='image-component-button' >
-        <button className='image-button'
+        {/* <button className='image-button'
         onClick={handleDelete} 
         id={imageUrl.imageKey}>
           remove
-        </button>
+        </button> */}
+        <FontAwesomeIcon icon={faTrashCan} className='image-button' onClick={handleDelete} 
+        id={imageUrl.imageKey}/>
       </div>
     </div>
   )
