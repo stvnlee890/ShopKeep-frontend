@@ -60,3 +60,10 @@
   padding-top: 35px;
   font-size: 14px;
 }
+
+@media (max-width: 800px) {
+.item-detail-form {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+} 
