@@ -20,7 +20,7 @@ const ViewAdminStore = ({ storeName, id, price, handleDelete }) => {
         alt={imageUrl[0].imageKey} 
         src={imageUrl[0].imageUrl}/>}
       <div id='view-store-details'>
-        <p>{`$${price}`}</p>
+        <p id='view-store-price'>{`$${price}`}</p>
         <div id='admin-store-delete-button-container'>
           {/* <FontAwesomeIcon icon={faTrashCan} 
             className='admin-store-delete-button'

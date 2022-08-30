@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&family=Poppins:wght@500&display=swap");
 
-.admin-store-container {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-  font-family:'Poppins', sans-serif;
-  margin-top: 20px;
-  max-width: 100%; */
+.favorite-image {
+  margin-top: 50px;
+}
+
+.favorite-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
@@ -15,31 +14,16 @@
   justify-content: center;
   place-items: center;
 }
-#view-store-price {
-  font-weight: bold;
+.favorite-image-container {
+  display: grid;
 }
-.admin-store-front {
-  text-align: center;
+.favorite-delete-button {
+  margin-top: 20px;
+  justify-content: end;
 }
-
-.admin-store-delete-button {
-  border: none;
-  background: transparent;
-  margin-top: 12px;
-  font-size: 16px;
-  cursor: pointer;
-  font-family:'Poppins', sans-serif;
-  width: 100%;
-}
-#view-store-details {
-  display: flex;
-  justify-content: space-between;
-}
-
-
 
 @media (max-width: 1300px) {
-  .admin-store-container {
+  .favorite-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     justify-content: center;
@@ -51,9 +35,9 @@
   }
 }
 @media (max-width: 960px) {
-  .admin-store-container {
+  .favorite-container {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     flex-wrap: wrap;
     margin-left: 20px;
@@ -63,21 +47,9 @@
   }
 }
 @media (max-width: 700px) {
-  .admin-store-container {
+  .favorite-container {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-left: 20px;
-    margin-right: 20px;
-    justify-content: center;
-    place-items: center;
-  }
-}
-@media (max-width: 650px) {
-  .admin-store-container {
-    display: grid;
-    grid-template-columns: 1fr ;
     justify-content: center;
     flex-wrap: wrap;
     margin-left: 20px;
