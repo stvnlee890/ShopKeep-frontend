@@ -9,7 +9,7 @@ const ProfilePic = ({ userid, userFirstName, userEmail }) => {
   console.log(profileImage)
 
   useEffect(() => {
-    axios.get(`https://git.heroku.com/shopkeepapp.git/images/profile-image/${userid}` )
+    axios.get(`https://shopkeepapp.herokuapp.com/images/profile-image/${userid}` )
     .then((res) => setProfileImage(res.data))
   },[])
 

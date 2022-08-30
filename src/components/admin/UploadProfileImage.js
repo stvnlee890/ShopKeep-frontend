@@ -45,7 +45,7 @@ const [imageUrl, setImageUrl] = useState('')
       event.preventDefault()
       const imageKey = event.target.id
       console.log(imageKey)
-      axios.delete(`https://git.heroku.com/shopkeepapp.git/images/${imageKey}`)
+      axios.delete(`https://shopkeepapp.herokuapp.com/images/${imageKey}`)
         .then(() => {
           const newImageUrl = imageUrl.filter(image => image.imageKey !== imageKey)
           console.log(newImageUrl)

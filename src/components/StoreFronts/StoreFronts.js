@@ -13,13 +13,13 @@ const StoreFronts = ({ store }) => {
   }
   // GET ALL STORE FRONTS
   useEffect(() => {
-    axios.get(`https://git.heroku.com/shopkeepapp.git/images/${store._id}` )
+    axios.get(`https://shopkeepapp.herokuapp.com/images/${store._id}` )
       .then((res) => setImageUrl(res.data))
   },[])
 
   const handleClick = (event) => {
     console.log(event.target.id)
-    axios.post(`https://git.heroku.com/shopkeepapp.git/favorite`, {username: username, storeFront: event.target.id, imageKey: imageUrl[0].imageKey})
+    axios.post(`https://shopkeepapp.herokuapp.com/favorite`, {username: username, storeFront: event.target.id, imageKey: imageUrl[0].imageKey})
       .then((res) => console.log(res.data))
   }
   if(!imageUrl){

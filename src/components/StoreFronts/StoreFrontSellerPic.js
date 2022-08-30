@@ -9,7 +9,7 @@ const StoreFrontSellerPic = ({ user }) => {
 
   
   useEffect(() => {
-    axios.get(`https://git.heroku.com/shopkeepapp.git/images/profile-image/${user}` )
+    axios.get(`https://shopkeepapp.herokuapp.com/images/profile-image/${user}` )
     .then((res) => setProfileImage(res.data))
   },[])
   

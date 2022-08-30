@@ -12,7 +12,7 @@ const AdminPage = () => {
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    axios.get(`https://git.heroku.com/shopkeepapp.git/user/${username}`)
+    axios.get(`https://shopkeepapp.herokuapp.com/user/${username}`)
       .then((res) => setUser(res.data))
   },[])
 

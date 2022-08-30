@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
-  const url = 'https://git.heroku.com/shopkeepapp.git/user/signup'
+  const url = 'https://shopkeepapp.herokuapp.com/user/signup'
   const navigate = useNavigate()
 
   const initialFormState = {

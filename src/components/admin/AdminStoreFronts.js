@@ -11,7 +11,7 @@ console.log(storeFront)
 
 // FETCH STORE-FRONTS
 useEffect(() => {
-    axios.get(`https://git.heroku.com/shopkeepapp.gitstore-front/${username}`)
+    axios.get(`https://shopkeepapp.herokuapp.com/store-front/${username}`)
       .then((res) => setStoreFront(res.data))
   }, [])
 console.log(storeFront)
@@ -21,7 +21,7 @@ const handleDelete = (event) => {
   event.preventDefault()
   console.log(event.target.id)
   const imageKey = event.target.id
-  axios.delete(`https://git.heroku.com/shopkeepapp.git/images/store-front/${imageKey}`)
+  axios.delete(`https://shopkeepapp.herokuapp.com/images/store-front/${imageKey}`)
     .then(() => {
       const newStoreFront = storeFront.filter(storeFront => storeFront._id !== imageKey)
 

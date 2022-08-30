@@ -9,7 +9,7 @@ const StoreImages = () => {
   const { storeid } = useParams()
   
   useEffect(() => {
-    axios.get(`https://git.heroku.com/shopkeepapp.git/images/${storeid}`)
+    axios.get(`https://shopkeepapp.herokuapp.com/images/${storeid}`)
       .then((res) => setImageUrl(res.data))
   },[])
 
