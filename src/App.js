@@ -1,5 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
+import AuthContext from './store/auth-context';
+import { useContext } from 'react';
 
 import Signup from './components/signup-login/Signup';
 import Login from './components/signup-login/Login'
@@ -17,15 +19,17 @@ import Favorite from './components/admin/favorite/Favorite';
 
 
 function App() {
+  const context = useContext(AuthContext)
+
   return (
     <div>
-      <Navbar />
+      <Navbar isLoggedIn={context.isLoggedIn} setIsLoggedIn={context.setIsLoggedIn}/>
 
       <Routes>
         <Route path='/' element={<Home />} />
         {/* <Route path='/' element={<StoreFronts />} /> */}
         <Route path='/signup' element={<Signup />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Login setIsLoggedIn={context.setIsLoggedIn} />} />
         <Route path='/signout' element={<Signout />} />
         <Route path='/:storeid/' element={<StoreFrontDetail />} />
         <Route path='/pay' element={<PaymentPage />} />

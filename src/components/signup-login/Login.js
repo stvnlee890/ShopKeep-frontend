@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const url = 'https://shopkeepapp.herokuapp.com/user/login'
   const navigate = useNavigate()
 
@@ -31,11 +31,13 @@ const Login = () => {
           window.localStorage.setItem('token', data.token)
           window.localStorage.setItem('user', data.user.username)
           window.localStorage.setItem('isLoggedIn', true)
+          setIsLoggedIn(true)
           // navigate(`/${data.user.username}/adminpage`)
           navigate('/')
         }else {
           window.localStorage.setItem('user', data.user.username)
           window.localStorage.setItem('isLoggedIn', true)
+          setIsLoggedIn(true)
           navigate('/')
         }
       })
