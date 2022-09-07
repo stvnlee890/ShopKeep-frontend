@@ -8,12 +8,13 @@ const PaymentPage = () => {
   const navigate = useNavigate()
 
   const initialFormState = {
-    username: '',
+    name: '',
     email: '',
-    password: '',
     firstName: '',
     lastName: '',
-    isAdmin: '',
+    mailingAddress: '',
+    billingAddress: '',
+    card: '',
   }
   const [user, setUser] = useState(initialFormState)
 
@@ -32,25 +33,25 @@ const PaymentPage = () => {
       <form onSubmit={handleSubmit}>
         <div className='user-input-signup-form'>
           <label className='label'>Name:</label>
-          <input className='input' onChange={handleChange} id='username' value={user.username} placeholder="name"/>
+          <input className='input' onChange={handleChange} id='name' value={user.username} placeholder="name"/>
 
           <label className='label'>Email:</label>
-          <input className='input' onChange={handleChange} id='email' value={user.email} placeholder="email"/>
+          <input className='input' onChange={handleChange} id='email-p' value={user.email} placeholder="email"/>
 
 
           <label className='label'>First Name:</label>
-          <input className='input' onChange={handleChange} id='firstName' value={user.firstName} placeholder="first name"/>
+          <input className='input' onChange={handleChange} id='firstName-p' value={user.firstName} placeholder="first name"/>
 
           <label className='label'>Last Name:</label>
-          <input className='input' onChange={handleChange} id='lastName' value={user.lastName} placeholder="last name"/>
+          <input className='input' onChange={handleChange} id='lastName-p' value={user.lastName} placeholder="last name"/>
           <label className='label'>Mailing Address:</label>
-          <input className='input' onChange={handleChange} id='password' value={user.password} placeholder="mailing address" type="password"/>
+          <input className='input' onChange={handleChange} id='mailingAddress' value={user.password} placeholder="mailing address" type="password"/>
 
           <label className='label'>Billing Address:</label>
-          <input className='input' onChange={handleChange} id='password' value={user.password} placeholder="billing address" type="password"/>
+          <input className='input' onChange={handleChange} id='BillingAddress' value={user.password} placeholder="billing address" type="password"/>
 
           <label className='label'>Card:</label>
-          <input className='input' onChange={handleChange} id='isAdmin' value={user.isAdmin} placeholder="card"/>
+          <input className='input' onChange={handleChange} id='card' value={user.isAdmin} placeholder="card"/>
         </div>
         <button id='item-form-button' type="submit">submit</button>
       </form>
