@@ -14,7 +14,6 @@ const Login = ({ setIsLoggedIn }) => {
   }
 
   const [userLogin, setUserLogin] = useState(initialFormState)
-  const [token, setToken] = useState()
 
   const handleChange = (event) => {
     event.preventDefault()
@@ -27,12 +26,10 @@ const Login = ({ setIsLoggedIn }) => {
       .then((res) => {
         const data = res.data
         if(data.user.isAdmin === true){
-          console.log(data)
           window.localStorage.setItem('token', data.token)
           window.localStorage.setItem('user', data.user.username)
           window.localStorage.setItem('isLoggedIn', true)
           setIsLoggedIn(true)
-          // navigate(`/${data.user.username}/adminpage`)
           navigate('/')
         }else {
           window.localStorage.setItem('user', data.user.username)
@@ -42,8 +39,6 @@ const Login = ({ setIsLoggedIn }) => {
         }
       })
   }
-
-  // provider 
 
   return (
     <div className='login-form-container'>

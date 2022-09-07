@@ -17,22 +17,11 @@ export const AuthContextProvider = (props) => {
     }
   }, [])
 
-  // const logOutHandler = () => {
-  //   window.localStorage.removeItem('isLoggedIn')
-  //   setIsLoggedIn(false);
-  // }
-
-  const logInHandler = () => {
-    window.localStorage.setItem('isLoggedIn', true)
-  }
-
   return (
   <AuthContext.Provider 
     value={{ 
       isLoggedIn: isLoggedIn,
       setIsLoggedIn: setIsLoggedIn,
-      // logOut: logOutHandler,
-      logIn: logInHandler,
     }}
   >
     {props.children}

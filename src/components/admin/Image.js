@@ -11,13 +11,13 @@ const Image = ({ imageUrl, handleDelete }) => {
         alt={imageUrl.imageName} 
         src={imageUrl.imageUrl} />
     
-          {/* <button className='image-button'
+          <button className='image-button'
           onClick={handleDelete} 
           id={imageUrl.imageKey}>
             remove
-          </button> */}
-          <FontAwesomeIcon icon={faTrashCan} className='image-button' onClick={handleDelete} 
-          id={imageUrl.imageKey}/>
+          </button>
+          {/* <FontAwesomeIcon icon={faTrashCan} id={imageUrl.imageKey} className='image-button' onClick={handleDelete} 
+          /> */}
       </div>
  
     </div>

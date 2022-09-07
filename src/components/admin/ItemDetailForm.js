@@ -10,6 +10,7 @@ const ItemDetailForm = ({ username, token, id }) => {
   const formData = {
     storeName: '',
     price: '',
+    size: '',
     condition: '',
     color: '',
     description: '',
