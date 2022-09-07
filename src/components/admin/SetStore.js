@@ -18,8 +18,6 @@ const SetStore = () => {
       .then((res) => setAdmin(res.data))
   }, [])
 
-
-
   return (
     <div>
       {!admin ? console.log('loading') : <ItemDetailForm username={ username } token={token} id={admin._id}/>}

@@ -77,8 +77,6 @@ const changeStateTrue = () => {
 const changeStateFalse = () => {
   setUpload(false)
 }
-
-  
   
   return (
     <div className='upload-images-container'>

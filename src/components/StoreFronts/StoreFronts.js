@@ -27,6 +27,7 @@ const StoreFronts = ({ store }) => {
   if(!imageUrl){
     console.log('loading')
   }
+ 
 
   return (
     <div className='store-front homepage'>

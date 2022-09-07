@@ -46,8 +46,6 @@ const ItemDetailForm = ({ username, token, id }) => {
     }
   }
 
-  
-
   return (
     <div className='item-detail-form-container'>
        <p id='item-detail-form-step'>Step 1 of 2 </p>
