@@ -37,7 +37,7 @@ const Login = ({ setIsLoggedIn }) => {
           setIsLoggedIn(true)
           navigate('/')
         }
-      })
+      }).catch(err => console.log(err))
   }
 
   return (

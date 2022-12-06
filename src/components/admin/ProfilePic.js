@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 const ProfilePic = ({ userid, userFirstName, userEmail }) => {
   const [profileImage, setProfileImage] = useState('')
   const navigate = useNavigate()
-  console.log(profileImage)
 
   useEffect(() => {
     axios.get(`https://shopkeepapp.herokuapp.com/images/profile-image/${userid}` )
@@ -16,7 +15,6 @@ const ProfilePic = ({ userid, userFirstName, userEmail }) => {
   const handleClick = () => {
     navigate(`/profile-image/${userid}`)
   }
-  console.log(userid)
   return (
     <div className='profile' >
       {!profileImage.length ? 

@@ -20,6 +20,7 @@
 .favorite-delete-button {
   margin-top: 20px;
   justify-content: end;
+  cursor: pointer;
 }
 
 @media (max-width: 1300px) {

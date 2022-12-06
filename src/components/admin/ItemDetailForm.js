@@ -1,11 +1,9 @@
 import './styling/itemDetailForm.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate, Link, Outlet} from 'react-router-dom'
-import UploadImages from './UploadImages'
+import { useNavigate, Outlet} from 'react-router-dom'
 
 const ItemDetailForm = ({ username, token, id }) => {
-  console.log(username)
   const navigate = useNavigate()
   const formData = {
     storeName: '',

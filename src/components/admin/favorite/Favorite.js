@@ -1,63 +1,69 @@
-import '../styling/favorite.css'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import "../styling/favorite.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 const Favorite = () => {
-const { username } = useParams()
-const [image, setImage] = useState([])
-const navigate = useNavigate()
+  const { username } = useParams();
+  const [image, setImage] = useState([]);
+  const [deleted, setDeleted] = useState(false);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    axios
+      .get(`https://shopkeepapp.herokuapp.com/images/favorite/${username}`)
+      .then((res) => setImage(res.data));
+  }, [deleted]);
 
-useEffect(() => {
-  axios.get(`https://shopkeepapp.herokuapp.com/images/favorite/${username}` )
-    .then((res) => setImage(res.data))
-},[])
+  const handleClick = (event) => {
+    navigate(`/${event.target.id}`);
+  };
 
-
-const handleClick = (event) => {
-  navigate(`/${event.target.id}`)
-}
-const handleDelete = (event) => {
-    event.preventDefault()
-    console.log(event.target.id)
-    axios.delete(`https://shopkeepapp.herokuapp.com/favorite/${event.target.id}`)
-      .then(() => {
-        const newImage = image.filter(image => image._id !== event.target.id)
-        setImage(newImage)  
+  const handleDelete = (event) => {
+    event.preventDefault();
+    axios
+      .delete(`https://shopkeepapp.herokuapp.com/favorite/${event.target.id}`)
+      .then((res) => {
+        if (res.status === 200) {
+          setDeleted(!deleted);
+        }
       })
-      .catch((err) => console.log(err))
-  }
+      .catch((err) => console.log(err));
+  };
 
-  
   return (
-    <div className='favorite-container'>
+    <div className="favorite-container">
+      {image.map((image) =>
+        !image ? (
+          <p>loading</p>
+        ) : (
+          <div className="favorite-image-container" key={image._id}>
+            <img
+              className="favorite-image"
+              onClick={handleClick}
+              alt={"images"}
+              id={image.storeFront}
+              src={image.imageUrl}
+            />
 
-      {image.map((image) => (
-        !image ? <p>loading</p> : 
-        <div className='favorite-image-container' key={image._id} >
-          <img 
-          className='favorite-image'
-          onClick={handleClick}
-          alt={'images'}
-          id={image.storeFront} 
-          src={image.imageUrl} />
-          {/* <button
-          id={image._id}
-          onClick={handleDelete}
-          >delete</button> */}
-            <FontAwesomeIcon icon={faTrashCan} 
+            {/* <FontAwesomeIcon
+              icon={faTrashCan}
+              id={image._id}
+              onClick={handleDelete}
+              className="favorite-delete-button"
+            /> */}
+            <p
             id={image._id}
             onClick={handleDelete}
-            className='favorite-delete-button'
-            />
-      </div>
-      ))}
-     
+            className="favorite-delete-button"
+            >Delete</p>
+          </div>
+        )
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Favorite
+export default Favorite;
