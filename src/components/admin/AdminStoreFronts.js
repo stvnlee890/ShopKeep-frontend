@@ -32,7 +32,7 @@ const AdminStoreFronts = () => {
       .catch((err) => console.log(err));
   };
   if (!storeFront) {
-    return <p>loading</p>;
+    return <p>No store front</p>;
   }
   if (storeFront) {
     return (
